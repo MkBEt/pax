@@ -1,0 +1,15 @@
+/node_modules
+/public/storage
+/public/img
+/public/report
+/storage/*.key
+/vendor/
+.idea
+.env
+Homestead.json
+Homestead.yaml
+gulpfile.js
+public/build/*
+README.md
+readme.md
+/node_modules/*
