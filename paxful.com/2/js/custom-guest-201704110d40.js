@@ -1,0 +1,2 @@
+$('.ladda-button').ladda('bind');$(document).ready(function(){var loadRegisterModal=function(){"use strict";var modal=$("#register-modal");modal.find(".modal-content").load(modal.data('href'));modal.modal('show');};if(document.location.hash==='#create_new_account'){loadRegisterModal();}
+$(document).on('click','#open-register-modal, .open-register-modal',function(e){"use strict";e.preventDefault();loadRegisterModal();});});
