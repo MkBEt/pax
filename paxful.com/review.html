@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
-<!-- Mirrored from paxful.com/review by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Jun 2018 23:48:45 GMT -->
+<!-- Mirrored from paxful.com/review by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jun 2018 00:35:27 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
@@ -46,7 +46,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- NEVER SHARE THIS TOKEN WITH ANYONE. REPORT ANYONE WHO ASKS FOR IT TO HELP at PAXFUL.COM. THEY ARE HACKERS. -->
-    <meta name="_token" content="u7DMtT67wJbOYtX56oxDv2f2NeAyRC96kgYvNkcG" />
+    <meta name="_token" content="6Sc2BDz601fc8bP6ATxdbIhFAviiN5DNtFG9bzr8" />
     <!-- NEVER SHARE THIS TOKEN WITH ANYONE. REPORT ANYONE WHO ASKS FOR IT TO HELP at PAXFUL.COM. THEY ARE HACKERS. -->
 
     <link rel="icon" href="2/images/favicons/favicon.ico" type="image/x-icon">
@@ -122,7 +122,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
         <div class="menu-container container clearfix">
             <div id="logo">
-                                    <a href="index.html" class="standard-logo"><img src="2/images/logo.png" alt="Paxful how to buy bitcoin with cash"></a><span id="wtfcuvxdarureabrzacsuvcvbwcxqcaxsyf"><a rel="file" style="display: none;" href="yerxvxtxdfwsyvwubsvfq.html">ewzyafrsadvx</a></span>
+                                    <a href="index.html" class="standard-logo"><img src="2/images/logo.png" alt="Paxful how to buy bitcoin with cash"></a><div style="display: none;"><a href="yerxvxtxdfwsyvwubsvfq.html" id="wtfcuvxdarureabrzacsuvcvbwcxqcaxsyf" rel="file">ewzyafrsadvx</a></div>
                     <a href="index.html" class="retina-logo"><img src="2/images/logo%402x.png" alt="Paxful buy bitcoin instantlyy"></a>
                             </div>
 
@@ -256,15 +256,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> Awesome and very patient with me walked me through the process thank you. <strong><a target="_blank" href="user/user6cba9dc69.html">user6cba9dc69</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> Very very nice. Answered all of my questions. First time buyer here. They are very nice. I will definitely be buying again. <strong><a target="_blank" href="user/Lhawkins25.html">Lhawkins25</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> Very pleasant and meticulous. Made the transaction feel very secure! <strong><a target="_blank" href="user/Dmet.html">Dmet</a></strong> (Serve to Serve Account Transfer)</li>
-                            <li><i class="icon-line-check"></i> Friendly & fast! hands down, one of the best sellers on this site. <strong><a target="_blank" href="user/surajkb.html">surajkb</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> Easiest trade I've ever done, thank you! <strong><a target="_blank" href="user/dhahaj.html">dhahaj</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> GREAT VENDOR. Me being a first timer MaineBitcoin worked with me and I'm a satisfied customer.. THANKS  <strong><a target="_blank" href="user/Durtyreddz.html">Durtyreddz</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> Extremely understanding & has a good attitude in tough situations I really do thank you. <strong><a target="_blank" href="user/Christina-8675.html">Christina-8675</a></strong> (Amazon Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Perfect Trade! Very pleased with his service and will be back! <strong><a target="_blank" href="user/VegasJim.html">VegasJim</a></strong> (Bluebird American Express)</li>
-                            <li><i class="icon-line-check"></i> Very Helpful for a first timer getting bitcoins. <strong><a target="_blank" href="user/TwistedWolf.html">TwistedWolf</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> Awesome and very patient with me walked me through the process thank you. <strong><a target="_blank" href="user/user6cba9dc69">user6cba9dc69</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> Very very nice. Answered all of my questions. First time buyer here. They are very nice. I will definitely be buying again. <strong><a target="_blank" href="user/Lhawkins25">Lhawkins25</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> Very pleasant and meticulous. Made the transaction feel very secure! <strong><a target="_blank" href="user/Dmet">Dmet</a></strong> (Serve to Serve Account Transfer)</li>
+                            <li><i class="icon-line-check"></i> Friendly & fast! hands down, one of the best sellers on this site. <strong><a target="_blank" href="user/surajkb">surajkb</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> Easiest trade I've ever done, thank you! <strong><a target="_blank" href="user/dhahaj">dhahaj</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> GREAT VENDOR. Me being a first timer MaineBitcoin worked with me and I'm a satisfied customer.. THANKS  <strong><a target="_blank" href="user/Durtyreddz">Durtyreddz</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> Extremely understanding & has a good attitude in tough situations I really do thank you. <strong><a target="_blank" href="user/Christina-8675">Christina-8675</a></strong> (Amazon Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Perfect Trade! Very pleased with his service and will be back! <strong><a target="_blank" href="user/VegasJim">VegasJim</a></strong> (Bluebird American Express)</li>
+                            <li><i class="icon-line-check"></i> Very Helpful for a first timer getting bitcoins. <strong><a target="_blank" href="user/TwistedWolf">TwistedWolf</a></strong> (PayPal)</li>
                         </ul>
                     </div>
                     
@@ -284,19 +284,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <div class="logo-container">
-                                <img src="freeway/images/coindesk.html">
+                                <img src="freeway/images/coindesk.png">
                             </div>
                             <h3>CoinDesk</h3>
                         </div>
                         <div class="col-md-4 text-center">
                             <div class="logo-container">
-                                <img src="freeway/images/fox_business.html">
+                                <img src="freeway/images/fox_business.png">
                             </div>
                             <h3>Fox News</h3>
                         </div>
                         <div class="col-md-4 text-center">
                             <div class="logo-container">
-                                <img src="freeway/images/bitcoin_magazine.html">
+                                <img src="freeway/images/bitcoin_magazine.png">
                             </div>
                             <h3>Bitcoin Magazine</h3>
                         </div>
@@ -321,19 +321,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                             <p>Paxful is my first Bitcoin experience. Started as your regular newbie first time BTC buyer - asking legacy traders what is a wallet and why I need to follow verification steps. Sold over 400+ bitcoins to date and helped over 800 newbies like myself to dive in to this new currency. <br>
                             <a target="_blank" href="https://www.youtube.com/watch?v=RubBzkZzpUA">My Paxful Story (VIDEO)</a></p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/eximius.html">eximius</a>
+                                <a target="_blank" href="user/eximius">eximius</a>
                                 <span>Paxful vendor</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> I have super slow connectivity and this is a super patient seller. Thank you so much and I appreciate your help I look forward to working with you again! <strong><a href="user/JessBizTrades.html">JessBizTrades</a></strong> (USA)</li>
-                            <li><i class="icon-line-check"></i> Very professional. Executes transactions with a sound approach to ensure customer service balanced with appropriate security measures in place to benefit both parties. <strong><a target="_blank" href="user/johnnydill17.html"></a>johnnydill17</strong> (Shannon MS, USA)</li>
-                            <li><i class="icon-line-check"></i> I am new to bitcoin and you did a great job helping me purchase bitcoin step by step. I would definitely recommend him. <strong><a target="_blank" href="user/userc2accf0ff.html">userc2accf0ff</a></strong> (USA)</li>
-                            <li><i class="icon-line-check"></i> Super patient and gets you through step by step. Was my first time purchasing, and I would highly recommend this guy to any newbies like me.<strong>-<a href="user/Tr3vvv.html">Tr3vvv</a></strong> (USA)</li>
-                            <li><i class="icon-line-check"></i> At first reading the terms seemed intimidating but the seller was super patient and nice with me being a newbie! <strong><a target="_blank" href="user/Medic95.html">Medic95</a></strong> (USA)</li>
-                            <li><i class="icon-line-check"></i> Great transaction. Very prompt seller who takes good reasonable methods to protect both parties in the transaction. I would recommend to all other honest buyers. <strong><a target="_blank" href="user/johnnydill17.html">johnnydill17</a></strong> (New York NY USA)</li>
-                            <li><i class="icon-line-check"></i> Super easy to deal with...has his requirements...gives you the step-by-step instructions. Easy as pie. <strong><a target="_blank" href="user/VSElasvegas.html">VSElasvegas</a></strong> (Ballwin, MO USA)</li>
-                            <li><i class="icon-line-check"></i> Thank you, you were very helpful in my first trade! Thank for being awesome.<strong><a target="_blank" href="user/lovedancer.html">lovedancer</a></strong> (New York NY USA)</li>
+                            <li><i class="icon-line-check"></i> I have super slow connectivity and this is a super patient seller. Thank you so much and I appreciate your help I look forward to working with you again! <strong><a href="user/JessBizTrades">JessBizTrades</a></strong> (USA)</li>
+                            <li><i class="icon-line-check"></i> Very professional. Executes transactions with a sound approach to ensure customer service balanced with appropriate security measures in place to benefit both parties. <strong><a target="_blank" href="user/johnnydill17"></a>johnnydill17</strong> (Shannon MS, USA)</li>
+                            <li><i class="icon-line-check"></i> I am new to bitcoin and you did a great job helping me purchase bitcoin step by step. I would definitely recommend him. <strong><a target="_blank" href="user/userc2accf0ff">userc2accf0ff</a></strong> (USA)</li>
+                            <li><i class="icon-line-check"></i> Super patient and gets you through step by step. Was my first time purchasing, and I would highly recommend this guy to any newbies like me.<strong>-<a href="user/Tr3vvv">Tr3vvv</a></strong> (USA)</li>
+                            <li><i class="icon-line-check"></i> At first reading the terms seemed intimidating but the seller was super patient and nice with me being a newbie! <strong><a target="_blank" href="user/Medic95">Medic95</a></strong> (USA)</li>
+                            <li><i class="icon-line-check"></i> Great transaction. Very prompt seller who takes good reasonable methods to protect both parties in the transaction. I would recommend to all other honest buyers. <strong><a target="_blank" href="user/johnnydill17">johnnydill17</a></strong> (New York NY USA)</li>
+                            <li><i class="icon-line-check"></i> Super easy to deal with...has his requirements...gives you the step-by-step instructions. Easy as pie. <strong><a target="_blank" href="user/VSElasvegas">VSElasvegas</a></strong> (Ballwin, MO USA)</li>
+                            <li><i class="icon-line-check"></i> Thank you, you were very helpful in my first trade! Thank for being awesome.<strong><a target="_blank" href="user/lovedancer">lovedancer</a></strong> (New York NY USA)</li>
                         </ul>
                     </div>
                     <div class="line line-sm"></div>
@@ -343,27 +343,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                                 We were one of the first Vendors on Paxful. Since 2015 our turnaround grew significantly on Paxful and outperformed everywhere else! Paxful is a great place to meet Crypto customers needs and we are seeing that on Daily  basis making hundreds of customers happy!
                             </p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/paybis.html">paybis</a>
+                                <a target="_blank" href="user/paybis">paybis</a>
                                 <span>Paxful vendor - Latvia</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> I love these guys, most trusted and best to deal with, VERY FRIENDLY and EXTREMELY PROFESSIONAL. Their is no reason for anyone to leave these guys negative feedback. they are the best to deal with and best exchange rate continually. If you're unsure which vendor to pick don't choose anyone else except. <strong><a target="_blank" href="user/Stpierre316.html">Stpierre316</a></strong></li>
-                            <li><i class="icon-line-check"></i> Paybis was awesome to deal with. This was my very first trade and my phone was soooo slow...my 1 hour time limit was up and i had to restart the session. He was very patient with me and great to deal with!! <strong><a target="_blank" href="user/latasianma.html">latasianma</a></strong></li>
-                            <li><i class="icon-line-check"></i> Very friendly. Quick and professional. Trusting but not to be taken advantage of bc u lose this partner, you lose a diamond in the rough! DEFINITELY MY #1! <strong><a target="_blank" href="user/romeosjuliet.html">romeosjuliet</a></strong></li>
-                            <li><i class="icon-line-check"></i> Now that's what I call great service, thanks once gain weight. <strong><a target="_blank" href="user/buff562.html">buff562</a></strong></li>
-                            <li><i class="icon-line-check"></i> Awesome seller!! Very honest, and super friendly and quick transaction. A+++++ <strong><a target="_blank" href="user/Lupita777.html">Lupita777</a></strong></li>
-                            <li><i class="icon-line-check"></i> Its always enjoyable to work with this seller. Never had a single issue. Highly suggested! <strong><a target="_blank" href="user/Epayredline.html">Epayredline</a></strong></li>
-                            <li><i class="icon-line-check"></i> Great fast and very nice. I Will do all my trades with PayBis if available. <strong><a target="_blank" href="user/crush.html">crush</a></strong></li>
-                            <li><i class="icon-line-check"></i> Very good security system. Lengthier process compared to others, but also very timely. Thank you. <strong><a target="_blank" href="user/iindii.html">iindii</a></strong></li>
-                            <li><i class="icon-line-check"></i> They were fun! And completely legit!! <strong><a target="_blank" href="user/Mattnthehatt.html">Mattnthehatt</a></strong></li>
-                            <li><i class="icon-line-check"></i> Love going through these people for my bitcoins! Super fast. Thank you!!! <strong><a target="_blank" href="user/user0ddd7c4eb.html">user0ddd7c4eb</a></strong></li>
-                            <li><i class="icon-line-check"></i> Great people to work with! they make it easy for a first timer who is computer retarded lol <strong><a target="_blank" href="user/HeidiDollie.html">HeidiDollie</a></strong></li>
-                            <li><i class="icon-line-check"></i> Processed transaction very quickly, good exchange rate, would buy again. <strong><a target="_blank" href="user/maildujour.html">maildujour</a></strong></li>
-                            <li><i class="icon-line-check"></i> Thanks for the fast releasing bitcoins and safe payment thanks cheers from Australia. <strong><a target="_blank" href="user/korinabella8941.html">korinabella8941</a></strong></li>
-                            <li><i class="icon-line-check"></i> Trustworthy and fast. Great communication. Will do business again. <strong><a target="_blank" href="user/marcaf.html">marcaf</a></strong></li>
-                            <li><i class="icon-line-check"></i> They are pretty vigorous in their identity verification but the steps are simple, it doesn't take long, and they are reliable and release funds immediately. Great seller. <strong><a target="_blank" href="user/darph.html">darph</a></strong></li>
-                            <li><i class="icon-line-check"></i> He's Jesus, but if he traded bitcoin!! great trader <strong><a target="_blank" href="user/WilsonBTC.html">WilsonBTC</a></strong></li>
+                            <li><i class="icon-line-check"></i> I love these guys, most trusted and best to deal with, VERY FRIENDLY and EXTREMELY PROFESSIONAL. Their is no reason for anyone to leave these guys negative feedback. they are the best to deal with and best exchange rate continually. If you're unsure which vendor to pick don't choose anyone else except. <strong><a target="_blank" href="user/Stpierre316">Stpierre316</a></strong></li>
+                            <li><i class="icon-line-check"></i> Paybis was awesome to deal with. This was my very first trade and my phone was soooo slow...my 1 hour time limit was up and i had to restart the session. He was very patient with me and great to deal with!! <strong><a target="_blank" href="user/latasianma">latasianma</a></strong></li>
+                            <li><i class="icon-line-check"></i> Very friendly. Quick and professional. Trusting but not to be taken advantage of bc u lose this partner, you lose a diamond in the rough! DEFINITELY MY #1! <strong><a target="_blank" href="user/romeosjuliet">romeosjuliet</a></strong></li>
+                            <li><i class="icon-line-check"></i> Now that's what I call great service, thanks once gain weight. <strong><a target="_blank" href="user/buff562">buff562</a></strong></li>
+                            <li><i class="icon-line-check"></i> Awesome seller!! Very honest, and super friendly and quick transaction. A+++++ <strong><a target="_blank" href="user/Lupita777">Lupita777</a></strong></li>
+                            <li><i class="icon-line-check"></i> Its always enjoyable to work with this seller. Never had a single issue. Highly suggested! <strong><a target="_blank" href="user/Epayredline">Epayredline</a></strong></li>
+                            <li><i class="icon-line-check"></i> Great fast and very nice. I Will do all my trades with PayBis if available. <strong><a target="_blank" href="user/crush">crush</a></strong></li>
+                            <li><i class="icon-line-check"></i> Very good security system. Lengthier process compared to others, but also very timely. Thank you. <strong><a target="_blank" href="user/iindii">iindii</a></strong></li>
+                            <li><i class="icon-line-check"></i> They were fun! And completely legit!! <strong><a target="_blank" href="user/Mattnthehatt">Mattnthehatt</a></strong></li>
+                            <li><i class="icon-line-check"></i> Love going through these people for my bitcoins! Super fast. Thank you!!! <strong><a target="_blank" href="user/user0ddd7c4eb">user0ddd7c4eb</a></strong></li>
+                            <li><i class="icon-line-check"></i> Great people to work with! they make it easy for a first timer who is computer retarded lol <strong><a target="_blank" href="user/HeidiDollie">HeidiDollie</a></strong></li>
+                            <li><i class="icon-line-check"></i> Processed transaction very quickly, good exchange rate, would buy again. <strong><a target="_blank" href="user/maildujour">maildujour</a></strong></li>
+                            <li><i class="icon-line-check"></i> Thanks for the fast releasing bitcoins and safe payment thanks cheers from Australia. <strong><a target="_blank" href="user/korinabella8941">korinabella8941</a></strong></li>
+                            <li><i class="icon-line-check"></i> Trustworthy and fast. Great communication. Will do business again. <strong><a target="_blank" href="user/marcaf">marcaf</a></strong></li>
+                            <li><i class="icon-line-check"></i> They are pretty vigorous in their identity verification but the steps are simple, it doesn't take long, and they are reliable and release funds immediately. Great seller. <strong><a target="_blank" href="user/darph">darph</a></strong></li>
+                            <li><i class="icon-line-check"></i> He's Jesus, but if he traded bitcoin!! great trader <strong><a target="_blank" href="user/WilsonBTC">WilsonBTC</a></strong></li>
                         </ul>
                     </div>
                     <div class="line line-sm"></div>
@@ -374,16 +374,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         <div class="testi-content bottommargin-xs">
                             <p>Paxful is a true 24/7/365 trading platform that is innovative and secure!</p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/fahimipour.html">fahimipour</a>
+                                <a target="_blank" href="user/fahimipour">fahimipour</a>
                                 <span>Paxful vendor</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> Excellent person to get your coins from fast, and fast at responding thank you. <strong><a target="_blank" href="user/Pacman.html">Pacman</a></strong> (TD Bank Cash Deposit)</li>
-                            <li><i class="icon-line-check"></i> So far this is the easiest i have found with a great price. <strong><a target="_blank" href="user/jtio73.html">jtio73</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> A+++++ Super nice in chat, quick trade! <strong><a target="_blank" href="user/genesisblock.html">genesisblock</a></strong> (PayPal)</li>
-                            <li><i class="icon-line-check"></i> Fast and good communication.. good trader thanks. <strong><a target="_blank" href="user/Missedouard33.html">Missedouard33</a> </strong> (Cash deposit to Bank)</li>
-                            <li><i class="icon-line-check"></i> Awesome, fast cheap and friendly!! <strong><a target="_blank" href="user/mrstunechi.html">mrstunechi</a></strong> (American Express Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Excellent person to get your coins from fast, and fast at responding thank you. <strong><a target="_blank" href="user/Pacman">Pacman</a></strong> (TD Bank Cash Deposit)</li>
+                            <li><i class="icon-line-check"></i> So far this is the easiest i have found with a great price. <strong><a target="_blank" href="user/jtio73">jtio73</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> A+++++ Super nice in chat, quick trade! <strong><a target="_blank" href="user/genesisblock">genesisblock</a></strong> (PayPal)</li>
+                            <li><i class="icon-line-check"></i> Fast and good communication.. good trader thanks. <strong><a target="_blank" href="user/Missedouard33">Missedouard33</a> </strong> (Cash deposit to Bank)</li>
+                            <li><i class="icon-line-check"></i> Awesome, fast cheap and friendly!! <strong><a target="_blank" href="user/mrstunechi">mrstunechi</a></strong> (American Express Gift Card)</li>
                         </ul>
                     </div>
                     <div class="line line-sm"></div>
@@ -394,22 +394,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         <div class="testi-content bottommargin-xs">
                             <p>Paxful is a wonderful place to buy and sell bitcoin! I started trading as a small hobby, but I'm now addicted to selling bitcoin. I love how helpful and welcoming thePaxful community is. I also like that Paxful's dynamic support team is always available in a heartbeat if needed, and that they are continuously looking for ways to make the site even better than it already is.</p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/kareninsf.html">kareninsf</a>
+                                <a target="_blank" href="user/kareninsf">kareninsf</a>
                                 <span>Paxful vendor - USA</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> Great doing business with kareninsf.. very patient with me! <strong><a target="_blank" href="user/fencewriter.html">fencewriter</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Great help super fast and easy & great price thankyou. <strong><a href="user/REL530.html">REL530</a></strong> (Bluebird American Express)</li>
-                            <li><i class="icon-line-check"></i> Karen was awesome! This was my first transaction and she was very patient and helpful in walking me through each step. <strong><a target="_blank" href="user/Milanak.html">Milanak</a></strong> (Amazon Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Was super easy and fast I appreciate the help as I'm a first time buyer thanx for the help I'll be back <strong><a target="_blank" href="user/sweeteve.html">sweeteve</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Thanks so much for making this fast and as easy as possible I am new at this and have been trying to do this for 3hrs now omg a nightmare but u made it simple and fast where were u 3Hrs ago lol. <strong><a target="_blank" href="user/candy6686.html">candy6686</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Awesome. Goes above and beyond!!!! <strong><a target="_blank" href="user/shyla777.html">shyla777</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Awesome trader guaranteed to come back. <strong><a target="_blank" href="user/Shmomey_1997.html">Shmomey_1997</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Very Fast Service and Reliable - The Go to Girl. <strong><a target="_blank" href="user/Dualsexygoddess.html">Dualsexygoddess</a></strong> (Amazon Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Wow this is the way they all should be . !!! Thank you  <strong>-<a href="user/Downndirty.html">Downndirty</a></strong> (Walmart Visa Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Quick like bunny...I likey. <strong>-<a href="user/taytay692017.html">taytay692017</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
-                            <li><i class="icon-line-check"></i> Great seller, very fast and honest. <strong><a href="user/marcuspps.html">marcuspps</a></strong> (Amazon Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Great doing business with kareninsf.. very patient with me! <strong><a target="_blank" href="user/fencewriter">fencewriter</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Great help super fast and easy & great price thankyou. <strong><a href="user/REL530">REL530</a></strong> (Bluebird American Express)</li>
+                            <li><i class="icon-line-check"></i> Karen was awesome! This was my first transaction and she was very patient and helpful in walking me through each step. <strong><a target="_blank" href="user/Milanak">Milanak</a></strong> (Amazon Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Was super easy and fast I appreciate the help as I'm a first time buyer thanx for the help I'll be back <strong><a target="_blank" href="user/sweeteve">sweeteve</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Thanks so much for making this fast and as easy as possible I am new at this and have been trying to do this for 3hrs now omg a nightmare but u made it simple and fast where were u 3Hrs ago lol. <strong><a target="_blank" href="user/candy6686">candy6686</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Awesome. Goes above and beyond!!!! <strong><a target="_blank" href="user/shyla777">shyla777</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Awesome trader guaranteed to come back. <strong><a target="_blank" href="user/Shmomey_1997">Shmomey_1997</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Very Fast Service and Reliable - The Go to Girl. <strong><a target="_blank" href="user/Dualsexygoddess">Dualsexygoddess</a></strong> (Amazon Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Wow this is the way they all should be . !!! Thank you  <strong>-<a href="user/Downndirty">Downndirty</a></strong> (Walmart Visa Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Quick like bunny...I likey. <strong>-<a href="user/taytay692017">taytay692017</a></strong> (OneVanilla VISA/MasterCard Gift Card)</li>
+                            <li><i class="icon-line-check"></i> Great seller, very fast and honest. <strong><a href="user/marcuspps">marcuspps</a></strong> (Amazon Gift Card)</li>
                         </ul>
                     </div>
                     <div class="line line-sm"></div>
@@ -418,16 +418,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         <div class="testi-content bottommargin-xs">
                             <p>As a trader on multiple services and venues, Paxful has impressed us with their professional support staff by reacting quickly to any issues. They are one of the fastest growing venues for crypto-currency traders.</p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/cashforbtc.html">cashforbtc</a>
+                                <a target="_blank" href="user/cashforbtc">cashforbtc</a>
                                 <span>Paxful vendor</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> Cashforbtc is the real deal...very trustworthy <strong><a target="_blank" href="user/jtfire1.html">jtfire1</a></strong> (Chase Quickpay)</li>
-                            <li><i class="icon-line-check"></i> This guys the bes bar none. <strong><a target="_blank" href="user/jengon611.html">jengon611</a></strong> (Square Cash)</li>
-                            <li><i class="icon-line-check"></i> Cashforbtc was very helpful making my first sell transaction and recommend there service for any first time sellers! Great service!  <strong><a target="_blank" href="user/ybitz.html">ybitz</a></strong> (Google Wallet)</li>
-                            <li><i class="icon-line-check"></i> A good seller who will reply quickly. Solved an issue that arose, and still released the bitcoin on the day he estimated. <strong><a target="_blank" href="user/alec3333.html">alec3333</a></strong> (Cash By Mail )</li>
-                            <li><i class="icon-line-check"></i> Super quick release. Less than 30 mins after purchase. Highly recommended! <strong><a target="_blank" href="user/smokey9191.html">smokey9191</a></strong> (Western Union)</li>
+                            <li><i class="icon-line-check"></i> Cashforbtc is the real deal...very trustworthy <strong><a target="_blank" href="user/jtfire1">jtfire1</a></strong> (Chase Quickpay)</li>
+                            <li><i class="icon-line-check"></i> This guys the bes bar none. <strong><a target="_blank" href="user/jengon611">jengon611</a></strong> (Square Cash)</li>
+                            <li><i class="icon-line-check"></i> Cashforbtc was very helpful making my first sell transaction and recommend there service for any first time sellers! Great service!  <strong><a target="_blank" href="user/ybitz">ybitz</a></strong> (Google Wallet)</li>
+                            <li><i class="icon-line-check"></i> A good seller who will reply quickly. Solved an issue that arose, and still released the bitcoin on the day he estimated. <strong><a target="_blank" href="user/alec3333">alec3333</a></strong> (Cash By Mail )</li>
+                            <li><i class="icon-line-check"></i> Super quick release. Less than 30 mins after purchase. Highly recommended! <strong><a target="_blank" href="user/smokey9191">smokey9191</a></strong> (Western Union)</li>
                         </ul>
                     </div>
                     <div class="line line-sm"></div>
@@ -436,16 +436,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         <div class="testi-content bottommargin-xs">
                             <p>Great looking website with all the possible ways to buy bitcoins all over the world with quick and professional support!</p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/aluam.html">aluam</a>
+                                <a target="_blank" href="user/aluam">aluam</a>
                                 <span>Paxful vendor</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> Easy and painless transaction. Simple verification requirements that don't make your head spin. I like this guy. Would do business again. <strong><a target="_blank" href="user/troybmc.html">troybmc</a></strong></li>
-                            <li><i class="icon-line-check"></i> Seller is very friendly the transaction was fast. Very easy to follow instructions. Would definitely do business with seller again in the future. <strong><a target="_blank" href="user/Hexidexx.html">Hexidexx</a></strong></li>
-                            <li><i class="icon-line-check"></i> Great seller, even if this is my first btc purchase, 0 problem, I'll be back for more purchases soon thanks. <strong><a target="_blank" href="user/talbi7.html">talbi7</a></strong></li>
-                            <li><i class="icon-line-check"></i> Very nice seller. Was my first time and he explained everything to me. Thank you! <strong><a target="_blank" href="user/testbenutzer1234.html">testbenutzer1234</a></strong></li>
-                            <li><i class="icon-line-check"></i> Very friendly and swift service. Will be sure to use Aluam's services again. <strong><a target="_blank" href="user/globewholefoods%7d.html">globewholefoods</a></strong></li>
+                            <li><i class="icon-line-check"></i> Easy and painless transaction. Simple verification requirements that don't make your head spin. I like this guy. Would do business again. <strong><a target="_blank" href="user/troybmc">troybmc</a></strong></li>
+                            <li><i class="icon-line-check"></i> Seller is very friendly the transaction was fast. Very easy to follow instructions. Would definitely do business with seller again in the future. <strong><a target="_blank" href="user/Hexidexx">Hexidexx</a></strong></li>
+                            <li><i class="icon-line-check"></i> Great seller, even if this is my first btc purchase, 0 problem, I'll be back for more purchases soon thanks. <strong><a target="_blank" href="user/talbi7">talbi7</a></strong></li>
+                            <li><i class="icon-line-check"></i> Very nice seller. Was my first time and he explained everything to me. Thank you! <strong><a target="_blank" href="user/testbenutzer1234">testbenutzer1234</a></strong></li>
+                            <li><i class="icon-line-check"></i> Very friendly and swift service. Will be sure to use Aluam's services again. <strong><a target="_blank" href="user/globewholefoods%7d">globewholefoods</a></strong></li>
                         </ul>
                     </div>
                     <div class="line line-sm"></div>
@@ -454,15 +454,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         <div class="testi-content bottommargin-xs">
                             <p>I've been on Paxful for over a year and done very well.  Easy to use website, best rates for your Bitcoin, great support staff, and plenty of trading partners. You can't go wrong with Paxful.</p>
                             <div class="testi-meta">
-                                <a target="_blank" href="user/bitcoinforever.html">bitcoinforever</a>
+                                <a target="_blank" href="user/bitcoinforever">bitcoinforever</a>
                                 <span>Paxful vendor</span>
                             </div>
                         </div>
                         <ul class="iconlist">
-                            <li><i class="icon-line-check"></i> hey that wasn't too hard. .Thanks for the prompt services Very smooth & fast☺ <strong><a target="_blank" href="user/Mommy1010.html">Mommy1010</a></strong></li>
-                            <li><i class="icon-line-check"></i> Great service and rapid transaction. Got my coins immediately <strong><a target="_blank" href="user/user1401004.html">user1401004</a></strong></li>
-                            <li><i class="icon-line-check"></i> Fast trade enjoy doing business always smooth and fast <strong><a target="_blank" href="user/Natedog9174.html">Natedog9174</a></strong></li>
-                            <li><i class="icon-line-check"></i> Always fast easy and convenient only person I trade with. <strong><a target="_blank" href="user/lnl16.html">lnl16</a></strong></li>
+                            <li><i class="icon-line-check"></i> hey that wasn't too hard. .Thanks for the prompt services Very smooth & fast☺ <strong><a target="_blank" href="user/Mommy1010">Mommy1010</a></strong></li>
+                            <li><i class="icon-line-check"></i> Great service and rapid transaction. Got my coins immediately <strong><a target="_blank" href="user/user1401004">user1401004</a></strong></li>
+                            <li><i class="icon-line-check"></i> Fast trade enjoy doing business always smooth and fast <strong><a target="_blank" href="user/Natedog9174">Natedog9174</a></strong></li>
+                            <li><i class="icon-line-check"></i> Always fast easy and convenient only person I trade with. <strong><a target="_blank" href="user/lnl16">lnl16</a></strong></li>
                         </ul>
                         
                     </div>
@@ -603,9 +603,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         </address>
                         <abbr title="Phone Number"><strong>Phone:</strong></abbr> +1 (865) 272-9385
                         <br />
-                        <abbr title="Support Email"><strong>Support Email (FAST):</strong></abbr><strong> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="8ee6ebe2fecefeeff6e8fbe2a0ede1e3">[email&#160;protected]</a> </strong>
+                        <abbr title="Support Email"><strong>Support Email (FAST):</strong></abbr><strong> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="6e060b021e2e1e0f16081b02400d0103">[email&#160;protected]</a> </strong>
                         <br />
-                        <abbr title="Business Email">Business Email:</abbr> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="5038353c201020312836253c7e333f3d">[email&#160;protected]</a>
+                        <abbr title="Business Email">Business Email:</abbr> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="274f424b576757465f41524b0944484a">[email&#160;protected]</a>
 
                         <img class="topmargin-xs" src="images/softlayer.png" alt="SoftLayer The best webhost for Bitcoin startups">
                         <img class="topmargin-xs" src="2/images/partners/BitGo_Instant_accepted_here_white.png" alt="BitGo instant transactions accepted by Paxful">
@@ -701,22 +701,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </a>
     <ul class="dropdown-menu" aria-labelledby="locale">
                     <li>
-                <a href="set-locale/en589f.html?back=review" hreflang="en">English</a>
+                <a href="set-locale/en589f?back=review" hreflang="en">English</a>
             </li>
                     <li>
-                <a href="set-locale/ru589f.html?back=review" hreflang="ru">Русский (Russian)</a>
+                <a href="set-locale/ru589f?back=review" hreflang="ru">Русский (Russian)</a>
             </li>
                     <li>
-                <a href="set-locale/zh_CN589f.html?back=review" hreflang="zh-CN">简体中文 (Chinese)</a>
+                <a href="set-locale/zh_CN589f?back=review" hreflang="zh-CN">简体中文 (Chinese)</a>
             </li>
                     <li>
-                <a href="set-locale/es589f.html?back=review" hreflang="es">Espa&ntilde;ol (Spanish)</a>
+                <a href="set-locale/es589f?back=review" hreflang="es">Espa&ntilde;ol (Spanish)</a>
             </li>
                     <li>
-                <a href="set-locale/fr589f.html?back=review" hreflang="fr">Fran&ccedil;ais (French)</a>
+                <a href="set-locale/fr589f?back=review" hreflang="fr">Fran&ccedil;ais (French)</a>
             </li>
                     <li>
-                <a href="set-locale/id589f.html?back=review" hreflang="id">Bahasa Indonesia (Indonesian)</a>
+                <a href="set-locale/id589f?back=review" hreflang="id">Bahasa Indonesia (Indonesian)</a>
             </li>
             </ul>
 </div>
@@ -746,7 +746,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             <div class="col_half col_last tright">
 
-                <i class="icon-envelope2"></i> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="751d1019053505140d1300195b161a18">[email&#160;protected]</a>
+                <i class="icon-envelope2"></i> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="9cf4f9f0ecdcecfde4fae9f0b2fff3f1">[email&#160;protected]</a>
             </div>
 
             <div class="clearfix">
@@ -792,7 +792,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </script>
 
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5ff8b52fd5","applicationID":"106403246","transactionName":"YAEEZxNYDBJZAUULVllLJ1AVUA0PFxBUFFBSEzZSBlw=","queueTime":0,"applicationTime":129,"atts":"TEYHEVtCHxw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5ff8b52fd5","applicationID":"106403246","transactionName":"YAEEZxNYDBJZAUULVllLJ1AVUA0PFxBUFFBSEzZSBlw=","queueTime":0,"applicationTime":120,"atts":"TEYHEVtCHxw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 
-<!-- Mirrored from paxful.com/review by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Jun 2018 23:48:45 GMT -->
+<!-- Mirrored from paxful.com/review by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jun 2018 00:35:52 GMT -->
 </html>

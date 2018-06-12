@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="id">
 
-<!-- Mirrored from paxful.com/privacy-policy-updated by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Jun 2018 23:48:52 GMT -->
+<!-- Mirrored from paxful.com/privacy-policy-updated by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jun 2018 01:05:53 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
@@ -47,7 +47,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- NEVER SHARE THIS TOKEN WITH ANYONE. REPORT ANYONE WHO ASKS FOR IT TO HELP at PAXFUL.COM. THEY ARE HACKERS. -->
-    <meta name="_token" content="u7DMtT67wJbOYtX56oxDv2f2NeAyRC96kgYvNkcG" />
+    <meta name="_token" content="6Sc2BDz601fc8bP6ATxdbIhFAviiN5DNtFG9bzr8" />
     <!-- NEVER SHARE THIS TOKEN WITH ANYONE. REPORT ANYONE WHO ASKS FOR IT TO HELP at PAXFUL.COM. THEY ARE HACKERS. -->
 
     <link rel="icon" href="2/images/favicons/favicon.ico" type="image/x-icon">
@@ -136,29 +136,29 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         </a>
                         <ul role="menu">
                             <li class="submenu"><a href="id/buy-bitcoin.html">Beli Bitcoin</a></li>
-                            <li class="submenu"><a href="id/sell-bitcoin.html">Jual Bitcoin</a></li>
+                            <li class="submenu"><a href="id/sell-bitcoin">Jual Bitcoin</a></li>
                             <li class="submenu"><a href="list-bitcoin-buy-sell-ad.html">Buat penawaran</a></li>
                         </ul>
                     </li>
                                         <li >
-                        <a href="id/bitcoin-wallet.html">
+                        <a href="id/bitcoin-wallet">
                             <i class="icon-line2-wallet menu-item-icon hidden-md hidden-lg"></i>
                             <div>Dompet</div>
                         </a>
                     </li>
                                                                                     <li >
-                        <a href="id/faq.html" class="dropdown-toggle" role="button" aria-expanded="false">
+                        <a href="id/faq" class="dropdown-toggle" role="button" aria-expanded="false">
                             <i class="icon-line2-question menu-item-icon hidden-md hidden-lg"></i>
                             <div>Bantuan <span class="caret hidden-sm hidden-xs" style="display: inline-block; border-top-width: 6px"></span></div>
                         </a>
                         <ul role="menu">
-                            <li class="submenu"><a href="id/faq.html">T&J</a></li>
+                            <li class="submenu"><a href="id/faq">T&J</a></li>
                             <li class="submenu"><a href="http://talk.paxful.com/" target="_blank">Forum dukungan</a></li>
                         </ul>
                     </li>
 
                                             <li class="menu-item-login ">
-                            <a href="id/login.html">
+                            <a href="id/login">
                                 <i class="icon-line2-login menu-item-icon hidden-md hidden-lg"></i>
                                 <div>Masuk <i class="icon-signin visible-lg-inline-block"></i></div>
                             </a>
@@ -420,7 +420,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
             <script type="text/javascript" src="2/js/custom-guest-201704110d40.js?v=1528388082"></script>
         <script type="text/javascript" src="2/js/plugins/bootstrap-password-strength.min.js"></script>
-        <script src="../www.google.com/recaptcha/api1144.html?render=explicit&amp;onload=initCaptcha&amp;hl=id" async defer></script>
+        <script src="../www.google.com/recaptcha/api1144.js?render=explicit&amp;onload=initCaptcha&amp;hl=id" async defer></script>
         <script type="text/javascript" src="2/js/custom-15270757830d40.js?v=1528388082"></script>
             <script>
     var showIntercomBubble = true;
@@ -484,9 +484,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         </address>
                         <abbr title="Phone Number"><strong>Telepon:</strong></abbr> +1 (865) 272-9385
                         <br />
-                        <abbr title="Support Email"><strong>Email Dukungan (CEPAT):</strong></abbr><strong> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="4e262b223e0e3e2f36283b22602d2123">[email&#160;protected]</a> </strong>
+                        <abbr title="Support Email"><strong>Email Dukungan (CEPAT):</strong></abbr><strong> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="7a121f160a3a0a1b021c0f1654191517">[email&#160;protected]</a> </strong>
                         <br />
-                        <abbr title="Business Email">Email Bisnis:</abbr> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="aec6cbc2deeedecfd6c8dbc280cdc1c3">[email&#160;protected]</a>
+                        <abbr title="Business Email">Email Bisnis:</abbr> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="2d4548415d6d5d4c554b5841034e4240">[email&#160;protected]</a>
 
                         <img class="topmargin-xs" src="images/softlayer.png" alt="SoftLayer Hosting web terbaik untuk rintisan Bitcoin">
                         <img class="topmargin-xs" src="2/images/partners/BitGo_Instant_accepted_here_white.png" alt="Transaksi instan BitGo diterima oleh Paxful">
@@ -504,14 +504,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         <h4>Bagian</h4>
                         <ul>
                                                         <li><a href="pay-with-paxful.html">Untuk Bisnis</a></li>
-                            <li><a href="id/about.html">Tentang Kami</a></li>
+                            <li><a href="id/about">Tentang Kami</a></li>
                             <li><a href="faq/index.html#contact">Kontak</a></li>
-                            <li><a href="id/faq.html">T&J</a></li>
-                            <li><a href="id/how-to-buy-bitcoin.html">Metode Pembayaran</a></li>
+                            <li><a href="id/faq">T&J</a></li>
+                            <li><a href="id/how-to-buy-bitcoin">Metode Pembayaran</a></li>
                             <li><a href="http://blog.paxful.com/" target="_blank">Blog</a></li>
                             <li><a href="http://talk.paxful.com/" target="_blank">Diskusi</a></li>
-                            <li><a href="id/developers.html">Pengembang/API</a></li>
-                            <li><a href="id/privacy.html">Kebijakan Privasi</a></li>
+                            <li><a href="id/developers">Pengembang/API</a></li>
+                            <li><a href="id/privacy">Kebijakan Privasi</a></li>
                         </ul>
 
                         <h4 class="topmargin-sm">Produk</h4>
@@ -569,12 +569,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                         </div>
                         <h4>Navigasi kilat</h4>
                         <ul>
-                                                        <li><a href="id/usa/buy-bitcoin.html">Beli bitcoin di AS</a></li>
-                            <li><a href="id/buy-sell-bitcoin-china.html">Beli bitcoin di Tiongkok</a></li>
-                            <li><a href="id/buy-sell-bitcoin-nigeria.html">Beli bitcoin di Nigeria</a></li>
-                            <li><a href="id/india/buy-bitcoin.html">Beli bitcoin di India</a></li>
-                            <li><a href="id/russia/buy-bitcoin.html">Beli bitcoin di Rusia</a></li>
-                            <li><a href="id/review.html">ulasan Paxful</a></li>
+                                                        <li><a href="id/usa/buy-bitcoin">Beli bitcoin di AS</a></li>
+                            <li><a href="id/buy-sell-bitcoin-china">Beli bitcoin di Tiongkok</a></li>
+                            <li><a href="id/buy-sell-bitcoin-nigeria">Beli bitcoin di Nigeria</a></li>
+                            <li><a href="id/india/buy-bitcoin">Beli bitcoin di India</a></li>
+                            <li><a href="id/russia/buy-bitcoin">Beli bitcoin di Rusia</a></li>
+                            <li><a href="id/review">ulasan Paxful</a></li>
                                                         <li>
                                 <div class="dropdown language">
     <a href="#" data-toggle="dropdown" class="btn">
@@ -582,22 +582,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </a>
     <ul class="dropdown-menu" aria-labelledby="locale">
                     <li>
-                <a href="set-locale/enda34.html?back=privacy-policy-updated" hreflang="en">English</a>
+                <a href="set-locale/enda34?back=privacy-policy-updated" hreflang="en">English</a>
             </li>
                     <li>
-                <a href="set-locale/ruda34.html?back=privacy-policy-updated" hreflang="ru">Русский (Russian)</a>
+                <a href="set-locale/ruda34?back=privacy-policy-updated" hreflang="ru">Русский (Russian)</a>
             </li>
                     <li>
-                <a href="set-locale/zh_CNda34.html?back=privacy-policy-updated" hreflang="zh-CN">简体中文 (Chinese)</a>
+                <a href="set-locale/zh_CNda34?back=privacy-policy-updated" hreflang="zh-CN">简体中文 (Chinese)</a>
             </li>
                     <li>
-                <a href="set-locale/esda34.html?back=privacy-policy-updated" hreflang="es">Espa&ntilde;ol (Spanish)</a>
+                <a href="set-locale/esda34?back=privacy-policy-updated" hreflang="es">Espa&ntilde;ol (Spanish)</a>
             </li>
                     <li>
-                <a href="set-locale/frda34.html?back=privacy-policy-updated" hreflang="fr">Fran&ccedil;ais (French)</a>
+                <a href="set-locale/frda34?back=privacy-policy-updated" hreflang="fr">Fran&ccedil;ais (French)</a>
             </li>
                     <li>
-                <a href="set-locale/idda34.html?back=privacy-policy-updated" hreflang="id">Bahasa Indonesia (Indonesian)</a>
+                <a href="set-locale/idda34?back=privacy-policy-updated" hreflang="id">Bahasa Indonesia (Indonesian)</a>
             </li>
             </ul>
 </div>
@@ -627,7 +627,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
             <div class="col_half col_last tright">
 
-                <i class="icon-envelope2"></i> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="99f1fcf5e9d9e9f8e1ffecf5b7faf6f4">[email&#160;protected]</a>
+                <i class="icon-envelope2"></i> <a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="a6cec3cad6e6d6c7dec0d3ca88c5c9cb">[email&#160;protected]</a>
             </div>
 
             <div class="clearfix">
@@ -673,7 +673,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </script>
 
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5ff8b52fd5","applicationID":"106403246","transactionName":"YAEEZxNYDBJZAUULVllLJ1AVUA0PFxJDC09WBx9jDlULAkE=","queueTime":0,"applicationTime":164,"atts":"TEYHEVtCHxw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5ff8b52fd5","applicationID":"106403246","transactionName":"YAEEZxNYDBJZAUULVllLJ1AVUA0PFxJDC09WBx9jDlULAkE=","queueTime":0,"applicationTime":175,"atts":"TEYHEVtCHxw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 
-<!-- Mirrored from paxful.com/privacy-policy-updated by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Jun 2018 23:48:52 GMT -->
+<!-- Mirrored from paxful.com/privacy-policy-updated by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jun 2018 01:05:55 GMT -->
 </html>
