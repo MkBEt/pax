@@ -39,8 +39,19 @@
               <li><a href="#">SUPPORT FORUM</a></li>
             </ul>
           </li>
+          @if(!Auth::user())
           <li><a href="{{route('login')}}">LOGIN</a></li>
           <li><a href="{{route('register')}}">CREATE ACCOUNT</a></li>
+          @else
+          <li class="menu-has-children"><a href="">{{Auth::user()->first_name}}</a>
+          <ul>
+              <li><a href="#">PROFILE</a></li>
+              <li><a href="{{route('logout')}}"  onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">LOGOUT</a></li>
+              <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+          </ul>
+          @endif
         {{--   <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li> --}}
         </ul>

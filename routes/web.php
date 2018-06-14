@@ -15,10 +15,16 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
-Route::get('/loginfrontend', function () {
-    return view('auth.frontend.login');
+Route::get('/home', function () {
+    return view('frontend.home');
 });
+
+Route::get('/test', function () {
+    return App\User::all();
+});
+
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

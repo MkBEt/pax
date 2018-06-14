@@ -34,11 +34,18 @@ return [
             'driver' => 'sync',
         ],
 
-        'database' => [
+  /*      'database' => [
             'driver' => 'database',
             'table' => 'jobs',
             'queue' => 'default',
             'retry_after' => 90,
+        ],*/
+
+        'database' => [
+            'driver' => 'mongodb',
+            'table'  => 'jobs',
+            'queue'  => 'default',
+            'expire' => 60,
         ],
 
         'beanstalkd' => [
