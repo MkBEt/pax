@@ -20,7 +20,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/test', function () {
-    return App\User::all();
+phpinfo();
 });
 
 
