@@ -19,7 +19,7 @@
   {{-- <link href="{{url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"> --}}
 
   <!-- Libraries CSS Files -->
-  <link href="{{asset('css/app.css')}}" rel="stylesheet">
+  <link href="{{mix('css/app.css')}}" rel="stylesheet">
   {{-- <link href="{{url('css/style.css')}}" rel="stylesheet"> --}}
   <link href="{{url('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
   <link href="{{url('lib/animate/animate.min.css')}}" rel="stylesheet">
@@ -74,7 +74,7 @@
 	{{-- <script src="{{url('lib/jquery/jquery.min.js')}}"></script> --}}
 	{{-- <script src="{{url('lib/jquery/jquery-migrate.min.js')}}"></script> --}}
 	{{-- <script src="{{url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script> --}}
-	<script src="{{asset('js/app.js')}}"></script>
+	<script src="{{mix('js/app.js')}}"></script>
 	<script src="{{url('lib/easing/easing.min.js')}}"></script>
 	<script src="{{url('lib/superfish/hoverIntent.js')}}"></script>
 	<script src="{{url('lib/superfish/superfish.min.js')}}"></script>
