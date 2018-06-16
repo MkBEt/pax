@@ -1765,7 +1765,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
               // that falls out of the range of 2xx
               switch (error.response.status) {
                 case 500:
-                  self.$toastr.e(error.response.message);
+                  self.$toastr.e(error.response.data.message);
                   break;
                 case 204:
                   console.log('conflict');
