@@ -89,9 +89,9 @@
 			  });
       	},
       	submitUser(){
+          let self=this;
       		this.$validator.validateAll().then((result) => {
 			if (!result) {
-				axios
 				return;
 			}else{
 				/*checking for username and email existence first*/
@@ -112,11 +112,17 @@
 		      			is_agreed: 1,
 					})
 					.then(function (response) {
-						if (response.status == 200) {
-							// console.log(response.data);
-							// debugger;
-							window.location.replace(response.data.redirect_path);
-						}
+						switch(response.status){
+							case 200:
+  							window.location.replace(response.data.redirect_path);
+                break;
+              case 204:
+                break;
+              case 500:
+                self.$toastr.e(response.message); 
+                break;
+              default:
+            }
 					})
 					.catch(function (error) {
 						console.log(error);

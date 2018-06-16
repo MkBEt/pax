@@ -8,6 +8,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '~vue-toastr/src/vue-toastr.scss';
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

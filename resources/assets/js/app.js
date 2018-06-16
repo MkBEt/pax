@@ -10,7 +10,11 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VeeValidate from 'vee-validate';
+// import Toastr
+import Toastr from 'vue-toastr';
+Vue.use(Toastr);
 Vue.use(VeeValidate);
+// Register vue component
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
