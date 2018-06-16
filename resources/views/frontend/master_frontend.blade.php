@@ -16,9 +16,11 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  {{-- <link href="{{url('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"> --}}
 
   <!-- Libraries CSS Files -->
+  <link href="{{asset('css/app.css')}}" rel="stylesheet">
+  {{-- <link href="{{url('css/style.css')}}" rel="stylesheet"> --}}
   <link href="{{url('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
   <link href="{{url('lib/animate/animate.min.css')}}" rel="stylesheet">
   <link href="{{url('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
@@ -69,9 +71,10 @@
 	}(document, 'script', 'facebook-jssdk'));
 	</script> --}}
 
-	<script src="{{url('lib/jquery/jquery.min.js')}}"></script>
-	<script src="{{url('lib/jquery/jquery-migrate.min.js')}}"></script>
-	<script src="{{url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+	{{-- <script src="{{url('lib/jquery/jquery.min.js')}}"></script> --}}
+	{{-- <script src="{{url('lib/jquery/jquery-migrate.min.js')}}"></script> --}}
+	{{-- <script src="{{url('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script> --}}
+	<script src="{{asset('js/app.js')}}"></script>
 	<script src="{{url('lib/easing/easing.min.js')}}"></script>
 	<script src="{{url('lib/superfish/hoverIntent.js')}}"></script>
 	<script src="{{url('lib/superfish/superfish.min.js')}}"></script>
@@ -81,10 +84,11 @@
 	<script src="{{url('lib/sticky/sticky.js')}}"></script>
 	{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script> --}}
 	<!-- Contact Form JavaScript File -->
-	<script src="{{url('contactform/contactform.js')}}"></script>
+	{{-- <script src="{{url('contactform/contactform.js')}}"></script> --}}
 
 	<!-- Template Main Javascript File -->
-	<script src="{{url('js/main.js')}}"></script>
+	{{-- <script src="{{url('js/main.js')}}"></script> --}}
+	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script> --}}
 	<script>
 
 
@@ -94,6 +98,7 @@
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 				}
 			});
+		});
 	</script>
 	@yield('javascript')    
 </body>

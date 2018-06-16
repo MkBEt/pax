@@ -12,6 +12,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    console.log('jquery is running');
 } catch (e) {}
 
 /**

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
+use Session;
+use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -46,12 +49,18 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
     protected function validator(array $data)
     {
+        // dd($data);
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'first_name' => 'required|string|max:50',
+            'middle_name' => 'nullable|string|max:50',
+            'last_name' => 'required|string|max:50',
+            'username' => 'required|string|max:50|unique:users',
+            'email' => 'required|string|email|max:50|confirmed|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'is_agreed' => 'required_with:1'
         ]);
     }
 
@@ -63,10 +72,39 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+  /*      dd([
+            'first_name' => $data['first_name'],
+            'middle_name' => $data['middle_name'],
+            'last_name' => $data['last_name'],
+            'username'=>$data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'is_agreed' => 1,
+            'is_validated' => 0
+        ]);*/
+        return User::create([
+            'first_name' => $data['first_name'],
+            'middle_name' => $data['middle_name'],
+            'last_name' => $data['last_name'],
+            'username'=>$data['username'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'is_agreed' => 1,
+            'is_validated' => 0
         ]);
     }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+        Session::flash('registration_success', 'Registration Completed! Please confirm your email address '.$request->email);
+
+        return $this->registered($request, $user)
+                        ?response()->json(['redirect_path'=>'\login'],200): response()->json(['redirect_path'=>'\login'],200);
+    }
+
 }

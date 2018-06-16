@@ -23,6 +23,11 @@ Route::get('/test', function () {
 phpinfo();
 });
 
+Route::middleware(['auth'])->prefix('api')->group(function(){
+	Route::get('users', function () {
+        return App\User::all();
+    });
+});
 
 
 Auth::routes();

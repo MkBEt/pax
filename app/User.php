@@ -10,7 +10,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    
+
 
 /*use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -27,7 +27,7 @@ class User extends Eloquent implements Authenticatable {
 
     protected $collection = 'users';
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name','middle_name','last_name','username','is_agreed','is_validated', 'email', 'password',
     ];
 
     /**
