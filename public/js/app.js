@@ -1757,15 +1757,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 break;
               case 204:
                 break;
-              case 500:
-                self.$toastr.e(response.message);
-                break;
               default:
             }
           }).catch(function (error) {
             if (error.response) {
               // The request was made and the server responded with a status code
               // that falls out of the range of 2xx
+              switch (error.response.status) {
+                case 500:
+                  self.$toastr.e(response.message);
+                  break;
+                case 204:
+                  console.log('conflict');
+                  break;
+                default:
+              }
               console.log(error.response.data);
               console.log(error.response.status);
               console.log(error.response.headers);
@@ -1775,11 +1781,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
               // http.ClientRequest in node.js
               console.log(error.request);
             } else {
-              self.$toastr.e(response.message);
               // Something happened in setting up the request that triggered an Error
               console.log('Error', error.message);
             }
-            console.log(error.config);
+            // console.log(error.config);
           });
           /*})
           .catch(function (error) {
