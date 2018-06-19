@@ -91,7 +91,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'is_agreed' => 1,
-            'is_validated' => 0,
+            'is_verified' => 0,
             'email_token' => base64_encode($data['email'])
         ]);
     }
