@@ -18,10 +18,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('frontend.home');
 });
-
-Route::get('/test', function () {
-phpinfo();
-});
+Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
 Route::middleware(['auth'])->prefix('api')->group(function(){
 	Route::get('users', function () {

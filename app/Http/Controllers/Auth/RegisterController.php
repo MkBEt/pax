@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Jobs\SendVerificationEmail;
 
 class RegisterController extends Controller
 {
@@ -90,7 +91,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'is_agreed' => 1,
-            'is_validated' => 0
+            'is_validated' => 0,
+            'email_token' => base64_encode($data['email'])
         ]);
     }
 
@@ -100,11 +102,28 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
+        dispatch(new SendVerificationEmail($user));
+
         // $this->guard()->login($user);
-        Session::flash('registration_success', 'Registration Completed! Please confirm your email address '.$request->email);
+        Session::flash('success_msg', 'You have successfully registered. An email is sent to you for verification.');
 
         return $this->registered($request, $user)
-                        ?response()->json(['redirect_path'=>'\login'],200): response()->json(['redirect_path'=>'\login'],200);
+                        ?response()->json(['redirect_path'=>'/login'],200): response()->json(['redirect_path'=>'/login'],200);
+    }
+
+    public function verify($token)
+    {
+        $user = User::where('email_token',$token)->first();
+        if ($user->is_verified == 0) {
+            $user->is_verified = 1;
+            Session::flash('success_msg', 'You email is successfully verified. Please login here.');
+            if($user->save()){
+                return redirect()->route('login');
+            }
+        }else{
+            Session::flash('info_msg', 'Your email is already verified. Please login here.');
+            return redirect()->route('login');
+        }
     }
 
 }

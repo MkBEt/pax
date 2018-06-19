@@ -3,13 +3,6 @@
     <link href="{{url('css/signin.css')}}" rel="stylesheet">
 @endsection
 @section('content')
-    @if (Session::has('registration_success'))
-  
-      <div class="alert alert-success" role="alert">
-        <strong>Success:</strong> {{ Session::get('registration_success') }}
-      </div>
-
-    @endif
     <form class="form-signin" method="POST" action="{{ route('login') }}">
       @csrf
       <h1 class="h3 mb-3 font-weight-normal">Please LogIn</h1>

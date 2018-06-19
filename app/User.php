@@ -27,7 +27,7 @@ class User extends Eloquent implements Authenticatable {
 
     protected $collection = 'users';
     protected $fillable = [
-        'first_name','middle_name','last_name','username','is_agreed','is_validated', 'email', 'password',
+        'first_name','middle_name','last_name','username','is_agreed','is_validated', 'email', 'password','email_token',
     ];
 
     /**

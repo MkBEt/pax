@@ -50,6 +50,19 @@
 	@include('frontend.partials._header')
 		
 	<div class="" id="app">
+		@if (Session::has('success_msg'))
+
+			<div class="alert alert-success" role="alert">
+			<strong>Success:</strong> {{ Session::get('success_msg') }}
+			</div>
+
+		@endif
+		@if (Session::has('info_msg'))
+			<div class="alert alert-info" role="alert">
+			<strong>Success:</strong> {{ Session::get('info_msg') }}
+			</div>
+
+		@endif
 		@yield('content')
 	</div>
 {{-- 	@if(Auth::check())
