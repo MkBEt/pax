@@ -63,6 +63,11 @@
       data(){
       	return this.initialData();
       },
+      created(){
+        steem.api.getOrderBook(limit, function(err, result) {
+  console.log(err, result);
+});
+      },
       methods:{
       	initialData(){
       		return {
@@ -134,9 +139,6 @@
                   break;
                 default:
               }
-/*              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);*/
             } else if (error.request) {
               // The request was made but no response was received
               // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
@@ -146,7 +148,6 @@
               // Something happened in setting up the request that triggered an Error
               console.log('Error', error.message);
             }
-            // console.log(error.config);
           });
 				/*})
 				.catch(function (error) {

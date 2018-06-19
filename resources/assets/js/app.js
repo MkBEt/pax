@@ -8,6 +8,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+/*window.am4core = require('@amcharts/amcharts4/coreue');
+window.am4charts = require('@amcharts/amcharts4/chartse');
+window.am4themes_animated = require('@amcharts/amcharts4/themes/animated');*/
 
 import VeeValidate from 'vee-validate';
 // import Toastr
@@ -31,6 +34,9 @@ const app = new Vue({
 */
 
 require('./bootstrap');
+window.steem = require('steem')
+
+// am4core.useTheme(am4themes_animated);
 
 window.Vue = require('vue');
 // window.Slug = require('slug');
@@ -102,12 +108,6 @@ Vue.component('v-input', {
   }
 });
 Vue.component('registration-form', require('./components/RegistrationForm.vue'));
+Vue.component("median-history", require("./components/Graphs/MedianHistory.vue"));
 
-// Vue.component('slug-widget', require('./components/slugWidget.vue'));
-
-// var app = new Vue({
-//   el: '#app',
-//   data: {}
-// });
-
-require('./manage')
+require('./manage');

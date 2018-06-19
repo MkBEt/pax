@@ -1,4 +1,8 @@
 {
-    "/js/app.js": "/js/app.js?id=253b77f24331e384baf8",
-    "/css/app.css": "/css/app.css?id=2e97954861cb8f5918aa"
+    "/js/app.js": "/js/app.js?id=f878990d340a12102fbb",
+    "/css/app.css": "/css/app.css?id=8887615ecf54797ef3fe",
+    "/pdfmake.js": "/pdfmake.js?id=4bdfdf9ec5b4a10aec71",
+    "/xlsx.js": "/xlsx.js?id=2a0db522c74079675f37",
+    "/fabric.js": "/fabric.js?id=7360d36b33a8388b8f0e",
+    "/responsivedefaults.js": "/responsivedefaults.js?id=704468d3dc0980e5d0ec"
 }
