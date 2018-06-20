@@ -29,6 +29,10 @@ Route::middleware(['auth'])->prefix('api')->group(function(){
     });
 });
 
+Route::namespace('Frontend')->middleware(['auth'])->group(function(){
+	Route::get('dashboard','UserController@userDashboard');
+});
+
 
 Auth::routes();
 

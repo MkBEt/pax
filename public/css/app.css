@@ -11232,6 +11232,19 @@ pre code {
   }
 }
 
+@media (min-width: 768px) {
+  .avatar-wrapper {
+    float: left;
+  }
+}
+
+.avatar-wrapper img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
 .container-fluid {
   width: 100%;
   padding-right: 15px;
@@ -16249,8 +16262,8 @@ input[type="button"].btn-block {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
+  background-color: #4cb797;
+  border-radius: 0;
 }
 
 @media (min-width: 576px) {
@@ -21117,5 +21130,83 @@ a.text-dark:focus {
 
 .required {
   color: red;
+}
+
+@media (max-width: 767px) {
+  .summary-overview {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .summary-overview {
+    margin-left: 30px;
+    float: left;
+    text-align: left;
+  }
+}
+
+.summary-overview h3 {
+  margin-bottom: 25px;
+}
+
+.summary-section .dark,
+.trade-status-container .feature-box h3 i,
+.trade-status-container .feature-box p {
+  color: #fff;
+}
+
+.dark,
+.dark a:hover,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #EEE;
+}
+
+.btn-collapsible {
+  overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  max-width: 40px;
+}
+
+.btn-collapsible.btn-xs {
+  max-width: 25px;
+}
+
+.btn-collapsible.btn-sm,
+.btn-group-sm > .btn-collapsible.btn {
+  max-width: 34px;
+}
+
+.btn-collapsible.btn-lg,
+.btn-group-lg > .btn-collapsible.btn {
+  max-width: 50px;
+}
+
+.btn-collapsible span {
+  opacity: 0;
+  text-indent: -6px;
+  display: inline-block;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.btn-collapsible:hover {
+  max-width: 300px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.btn-collapsible:hover span {
+  opacity: 1;
+  text-indent: 0px;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 

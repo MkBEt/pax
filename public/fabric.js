@@ -1,4 +1,4 @@
-webpackJsonp([3],{
+webpackJsonp([2],{
 
 /***/ "./node_modules/@amcharts/amcharts4/.internal/fabric/fabric.js":
 /***/ (function(module, exports, __webpack_require__) {

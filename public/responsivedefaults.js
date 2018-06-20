@@ -1,4 +1,4 @@
-webpackJsonp([4],{
+webpackJsonp([3],{
 
 /***/ "./node_modules/@amcharts/amcharts4/.internal/charts/map/SmallMap.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -96,7 +96,7 @@ var SmallMap = /** @class */ (function (_super) {
         rectangle.stroke = interfaceColors.getFor("alternativeBackground");
         rectangle.strokeWidth = 1;
         rectangle.strokeOpacity = 0.5;
-        rectangle.fill = Object(__WEBPACK_IMPORTED_MODULE_5__core_utils_Color__["c" /* color */])(); //"none";
+        rectangle.fill = Object(__WEBPACK_IMPORTED_MODULE_5__core_utils_Color__["b" /* color */])(); //"none";
         rectangle.verticalCenter = "middle";
         rectangle.horizontalCenter = "middle";
         rectangle.isMeasured = false;
@@ -115,7 +115,7 @@ var SmallMap = /** @class */ (function (_super) {
          */
         get: function () {
             if (!this._series) {
-                this._series = new __WEBPACK_IMPORTED_MODULE_2__core_utils_List__["b" /* List */]();
+                this._series = new __WEBPACK_IMPORTED_MODULE_2__core_utils_List__["a" /* List */]();
                 this._series.events.on("insert", this.handleSeriesAdded, this);
                 this._series.events.on("remove", this.handleSeriesRemoved, this);
             }
@@ -159,7 +159,7 @@ var SmallMap = /** @class */ (function (_super) {
      */
     SmallMap.prototype.moveToPosition = function (event) {
         var svgPoint = event.svgPoint;
-        var rectPoint = __WEBPACK_IMPORTED_MODULE_7__core_utils_Utils__["svgPointToSprite"](svgPoint, this.rectangle);
+        var rectPoint = __WEBPACK_IMPORTED_MODULE_7__core_utils_Utils__["H" /* svgPointToSprite */](svgPoint, this.rectangle);
         var zoomLevel = this.chart.zoomLevel;
         var scale = Math.min(this.percentWidth, this.percentHeight) / 100;
         var x = (rectPoint.x + this.rectangle.pixelWidth / 2) / scale * zoomLevel;
@@ -238,10 +238,10 @@ var SmallMap = /** @class */ (function (_super) {
     SmallMap.prototype.processConfig = function (config) {
         if (config) {
             // Set up series
-            if (__WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["hasValue"](config.series) && __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["isArray"](config.series)) {
+            if (__WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["c" /* hasValue */](config.series) && __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["d" /* isArray */](config.series)) {
                 for (var i = 0, len = config.series.length; i < len; i++) {
                     var series = config.series[i];
-                    if (__WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["hasValue"](series) && __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["isString"](series) && this.map.hasKey(series)) {
+                    if (__WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["c" /* hasValue */](series) && __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["i" /* isString */](series) && this.map.hasKey(series)) {
                         config.series[i] = this.map.getKey(series);
                     }
                 }
@@ -258,7 +258,7 @@ var SmallMap = /** @class */ (function (_super) {
  *
  * @ignore
  */
-__WEBPACK_IMPORTED_MODULE_4__core_Registry__["b" /* registry */].registeredClasses["SmallMap"] = SmallMap;
+__WEBPACK_IMPORTED_MODULE_4__core_Registry__["a" /* registry */].registeredClasses["SmallMap"] = SmallMap;
 //# sourceMappingURL=SmallMap.js.map
 
 /***/ }),
@@ -450,9 +450,9 @@ var ZoomControl = /** @class */ (function (_super) {
                 chart.events.on("maxsizechanged", this.updateThumbSize, this),
                 chart.events.on("zoomlevelchanged", this.updateThumb, this),
                 this.minusButton.events.on("hit", function () { chart.zoomOut(chart.zoomGeoPoint); }, chart),
-                Object(__WEBPACK_IMPORTED_MODULE_5__core_interaction_Interaction__["b" /* getInteraction */])().body.events.on("keyup", function (ev) {
+                Object(__WEBPACK_IMPORTED_MODULE_5__core_interaction_Interaction__["a" /* getInteraction */])().body.events.on("keyup", function (ev) {
                     if (_this.topParent.hasFocused) {
-                        if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["b" /* keyboard */].isKey(ev.event, "enter")) {
+                        if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["a" /* keyboard */].isKey(ev.event, "enter")) {
                             if (_this.minusButton.isFocused) {
                                 chart.zoomOut();
                             }
@@ -460,10 +460,10 @@ var ZoomControl = /** @class */ (function (_super) {
                                 chart.zoomIn();
                             }
                         }
-                        else if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["b" /* keyboard */].isKey(ev.event, "plus")) {
+                        else if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["a" /* keyboard */].isKey(ev.event, "plus")) {
                             chart.zoomIn();
                         }
-                        else if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["b" /* keyboard */].isKey(ev.event, "minus")) {
+                        else if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["a" /* keyboard */].isKey(ev.event, "minus")) {
                             chart.zoomOut();
                         }
                     }
@@ -578,7 +578,7 @@ var ZoomControl = /** @class */ (function (_super) {
  *
  * @ignore
  */
-__WEBPACK_IMPORTED_MODULE_7__core_Registry__["b" /* registry */].registeredClasses["ZoomControl"] = ZoomControl;
+__WEBPACK_IMPORTED_MODULE_7__core_Registry__["a" /* registry */].registeredClasses["ZoomControl"] = ZoomControl;
 //# sourceMappingURL=ZoomControl.js.map
 
 /***/ }),
