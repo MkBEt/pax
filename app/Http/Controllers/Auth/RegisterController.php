@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Jobs\SendVerificationEmail;
+use App\Classes\Helper as Helper;
 
 class RegisterController extends Controller
 {
@@ -92,7 +93,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'is_agreed' => 1,
             'is_verified' => 0,
-            'email_token' => base64_encode($data['email'])
+            'email_token' => base64_encode($data['email']),
+            'memo'=> Helper::v4(),
         ]);
     }
 

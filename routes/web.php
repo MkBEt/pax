@@ -10,13 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Classes\Helper as Helper;
 Route::get('/', function () {
     return view('frontend.home');
 });
 
 Route::get('/home', function () {
     return view('frontend.home');
+});
+Route::get('/test',function(){
+	dd(Helper::v4());
 });
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
