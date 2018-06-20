@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Jobs\SendVerificationEmail;
 
-use Mail;
-use App\Mail\EmailVerification;
-
 class RegisterController extends Controller
 {
     /*
@@ -105,9 +102,7 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-        // dispatch(new SendVerificationEmail($user));
-        $email = new EmailVerification($user);
-        Mail::to($this->user->email)->send($email);
+        dispatch(new SendVerificationEmail($user));
 
         // $this->guard()->login($user);
         Session::flash('success_msg', 'You have successfully registered. An email is sent to you for verification.');
