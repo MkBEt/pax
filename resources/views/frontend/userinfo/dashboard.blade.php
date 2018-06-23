@@ -10,12 +10,12 @@
 						</div>
 						<div class="summary-overview">
 							<h2 class="dark ">{{$info->username}}</h2>
-							<h3 class="dark ">0 Steem / 0 STB</h3>
-							<span class="dark">{{$info->memo}}</span>&nbsp;&nbsp;<a class="btn btn-outline-info btn-sm btn-collapsible"><i class="fa fa-copy"></i> <span>Copy</span></a>
+							<h3 class="dark ">0 Steem / 0 SBD</h3>
+							<span class="dark" id="memo">{{$info->memo}}test</span>&nbsp;&nbsp;<a class="btn btn-warning btn-sm btn-collapsible" onclick="copyToClipboard()"><i class="fa fa-copy"></i> <span>Copy</span></a>
 							
 						</div>
 					</div>
-				{{-- 	<div class="col-md-6 col-sm-12 quick-actions">
+					<div class="col-md-6 col-sm-12 quick-actions">
 						<div class="row ">
 							<div class="col-xs-3 text-center quick-action-specific bounceIn animated" data-animate="bounceIn">
 								<a href="#" class="btn-circle btn">
@@ -44,9 +44,23 @@
 
 							
 						</div>
-					</div> --}}
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+@endsection
+
+@section('javascript')
+<script>
+	function copyToClipboard() {
+	    var copyText = document.getElementById("memo");
+	    var textArea = document.createElement("textarea");
+	    textArea.value = copyText.textContent;
+	    document.body.appendChild(textArea);
+	    textArea.select();
+	    document.execCommand("Copy");
+	    textArea.remove();
+	}
+</script>
 @endsection

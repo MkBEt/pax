@@ -64,9 +64,6 @@
       	return this.initialData();
       },
       created(){
-        steem.api.getOrderBook(limit, function(err, result) {
-  console.log(err, result);
-});
       },
       methods:{
       	initialData(){

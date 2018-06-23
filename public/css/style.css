@@ -237,6 +237,35 @@ h1, h2, h3, h4, h5, h6 {
   color: #0c2e8a;
 }
 
+.btn-info-theme {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+}
+
+.btn-info-theme {
+  background: #0c2e8a;
+  border: 2px solid #0c2e8a;
+}
+.btn-info-theme:hover {
+  background: none;
+  color: #0c2e8a;
+}
+
+.btn-info-theme:disabled,
+.btn-info-theme[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 #intro .intro-content .btn-projects {
   background: #50d8af;
   border: 2px solid #50d8af;
@@ -1144,7 +1173,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     width: 52px!important;
     height: 52px!important;
     line-height: 52px!important;
-    background-color: #006064;
+    background-color: #e0dada;
     border-radius: 3px;
 }
 .i-bordered, .i-circled, .i-plain, .i-rounded, .social-icon {

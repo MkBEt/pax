@@ -5,7 +5,17 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
+// window.sc2 = require('./sc2');
+
+/*console.log(sc2);
+var api = sc2.Initialize({
+  app: 'busy',
+  callbackURL: 'http://localhost:8000/demo/',
+  accessToken: 'access_token',
+  scope: ['vote', 'comment']
+});*/
+
 
 window.Vue = require('vue');
 /*window.am4core = require('@amcharts/amcharts4/coreue');
@@ -108,6 +118,7 @@ Vue.component('v-input', {
   }
 });
 Vue.component('registration-form', require('./components/RegistrationForm.vue'));
+Vue.component('transfer-form', require('./components/BuyComponent.vue'));
 Vue.component("median-history", require("./components/Graphs/MedianHistory.vue"));
 
 require('./manage');

@@ -19,7 +19,7 @@ Route::get('/home', function () {
     return view('frontend.home');
 });
 Route::get('/test',function(){
-	dd(Helper::v4());
+	return view('frontend.transaction.buy_sell_steem_sbd');
 });
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 

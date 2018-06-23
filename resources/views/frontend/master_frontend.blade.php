@@ -102,6 +102,7 @@
 	<!-- Template Main Javascript File -->
 	{{-- <script src="{{url('js/main.js')}}"></script> --}}
 	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script> --}}
+	<script src="{{url('js/sc2.min.js')}}"></script>
 	<script>
 
 
@@ -112,6 +113,23 @@
 				}
 			});
 		});
+		// var sc2 = require('sc2');
+
+		var api = sc2.Initialize({
+		  app: 'busy',
+		  callbackURL: 'http://localhost:8000/dashboard/',
+		  accessToken: 'access_token',
+		  scope: ['vote', 'comment']
+		});
+
+		var link = api.sign('transfer', {
+		  to: 'fabien',
+		  amount: '1.000 STEEM',
+		  memo: 'Hello World!',
+		}, 'http://localhost:8000/demo/transfer-complete');
+
+		console.log(link);
+		console.log(api);
 	</script>
 	@yield('javascript')    
 </body>
