@@ -9,9 +9,9 @@
 		</div>
 	</section> --}}
 	{{-- <div class="container"> --}}
-		
 	<section class="transfer-section" id="app">
-		<transfer-form></transfer-form>
+		{{-- {{ Auth::user()}} --}}
+		<transfer-form memo="{{ Auth::user()->memo}}"></transfer-form>
 	</section>
 	{{-- </div> --}}
 @endsection

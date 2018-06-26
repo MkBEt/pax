@@ -6,9 +6,10 @@
  */
 
 // require('./bootstrap');
-// window.sc2 = require('./sc2');
+window.sc2 = require('./sc2');
 
-/*console.log(sc2);
+// console.log(window.sc2.Initialize);
+/*
 var api = sc2.Initialize({
   app: 'busy',
   callbackURL: 'http://localhost:8000/demo/',
@@ -48,7 +49,7 @@ window.steem = require('steem')
 
 // am4core.useTheme(am4themes_animated);
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 // window.Slug = require('slug');
 // Slug.defaults.mode = 'rfc3986';
 
@@ -68,11 +69,13 @@ Vue.component('v-input', {
     	<span v-if="label">{{label}}</span> <span v-if="required" class="required">*</span> 
 		</label>
 			<input @input="$emit('input', $event.target.value)"
+             @keydown.enter="$emit('keydown-enter')"
              @blur="$emit('blur')"
              			 :placeholder="placeholder"
 						 :type="inputType"
 						 :name="name"
 						 :value="value"
+             :id="id"
 						 :class="{'form-control': true, 'is-danger': errors.has(name) }"
 			>
 		<div class="invalid-feedback" v-if="errors.has(name)" style="width: 100%;">
@@ -80,13 +83,16 @@ Vue.component('v-input', {
 	  </div>
 	</div>
   `,
-  props: ['value', 'name','placeholder'],
+  props: ['value', 'name','placeholder','id'],
   name: 'v-input',
   inject: ['$validator'], // we want the same errors as the parent validator so we inject it.
   props: {
     name: {
       type: String,
       required: true
+    },
+    id: {
+      type: String,
     },
     label: String,
     value: {

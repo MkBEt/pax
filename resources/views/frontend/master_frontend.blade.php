@@ -117,19 +117,19 @@
 
 		var api = sc2.Initialize({
 		  app: 'busy',
-		  callbackURL: 'http://localhost:8000/dashboard/',
+		  callbackURL: '/dashboard/',
 		  accessToken: 'access_token',
 		  scope: ['vote', 'comment']
 		});
+/*
 
 		var link = api.sign('transfer', {
 		  to: 'fabien',
 		  amount: '1.000 STEEM',
 		  memo: 'Hello World!',
-		}, 'http://localhost:8000/demo/transfer-complete');
-
-		console.log(link);
-		console.log(api);
+		}, 'http://localhost:8000/demo/transfer-complete');*/
+		/*console.log(link);
+		console.log(api);*/
 	</script>
 	@yield('javascript')    
 </body>

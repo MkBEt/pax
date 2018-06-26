@@ -18,9 +18,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('frontend.home');
 });
-Route::get('/test',function(){
-	return view('frontend.transaction.buy_sell_steem_sbd');
-});
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
 
 Route::middleware(['auth'])->prefix('api')->group(function(){
@@ -31,6 +28,9 @@ Route::middleware(['auth'])->prefix('api')->group(function(){
 
 Route::namespace('Frontend')->middleware(['auth'])->group(function(){
 	Route::get('dashboard','UserController@userDashboard');
+	Route::get('/buy_sell_steem_sbd',function(){
+		return view('frontend.transaction.buy_sell_steem_sbd');
+	})->name('buy_sell');
 });
 
 
