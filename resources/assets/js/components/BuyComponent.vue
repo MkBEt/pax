@@ -107,12 +107,18 @@
 								if (parseFloat((res.balance).replace("STEEM",'')) < parseFloat(self.amount)) {
 									self.invalid_amount = true;
 									return false;
+								}else{
+									self.invalid_amount = false;
+									
 								}
 							}
 							if (self.type=='sbd') {
 								if (parseFloat((res.sbd_balance).replace("SBD",'')) < parseFloat(self.amount)) {
 									self.invalid_amount = true;
 									return false;
+								}else{
+									self.invalid_amount = false;
+
 								}
 							}
 						}
