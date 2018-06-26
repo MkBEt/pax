@@ -10,8 +10,8 @@
 						</div>
 						<div class="summary-overview">
 							<h2 class="dark ">{{$info->username}}</h2>
-							<h3 class="dark ">0 Steem / 0 SBD</h3>
-							<span class="dark" id="memo">{{$info->memo}}test</span>&nbsp;&nbsp;<a class="btn btn-warning btn-sm btn-collapsible" onclick="copyToClipboard()"><i class="fa fa-copy"></i> <span>Copy</span></a>
+							<h3 class="dark ">{{$info->blc_steem}} Steem / {{$info->blc_sbd}} SBD</h3>
+							<span class="dark" id="memo">{{$info->memo}}</span>&nbsp;<a class="btn btn-warning btn-sm btn-collapsible" onclick="copyToClipboard()"><i class="fa fa-copy"></i> <span>Copy</span></a>
 							
 						</div>
 					</div>

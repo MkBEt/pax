@@ -95,6 +95,8 @@ class RegisterController extends Controller
             'is_verified' => 0,
             'email_token' => base64_encode($data['email']),
             'memo'=> Helper::v4(),
+            'blc_steem'=> 0,
+            'blc_sbd'=> 0,
         ]);
     }
 

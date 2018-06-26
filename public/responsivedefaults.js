@@ -1,1 +1,786 @@
-webpackJsonp([3],{MZlR:function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o,n=i("GN50"),s=i("hAO6"),a=i("9T3P"),r=i("uVRp"),h=i("l920"),l=i("rKtN"),c=i("BWiY"),p=i("Bgew"),u=i("UD8K"),d=i("wN0d"),m=i("xrJr"),g=i("Dn0+"),f=i("CTzi"),v=i("8Zw/"),b=i("tfhW"),y=this&&this.__extends||(o=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var i in e)e.hasOwnProperty(i)&&(t[i]=e[i])},function(t,e){function i(){this.constructor=t}o(t,e),t.prototype=null===e?Object.create(e):(i.prototype=e.prototype,new i)}),x=function(t){function e(){var e=t.call(this)||this;e._chart=new d.d,e.className="SmallMap",e.align="left",e.valign="bottom",e.percentHeight=20,e.percentWidth=20,e.margin(5,5,5,5);var i=new f.a;e.background.fillOpacity=.9,e.background.fill=i.getFor("background"),e.events.on("hit",e.moveToPosition,e),e.events.on("maxsizechanged",e.updateMapSize,e),e.seriesContainer=e.createChild(c.a),e.seriesContainer.shouldClone=!1;var o=e.createChild(p.a);return o.shouldClone=!1,o.stroke=i.getFor("alternativeBackground"),o.strokeWidth=1,o.strokeOpacity=.5,o.fill=Object(g.b)(),o.verticalCenter="middle",o.horizontalCenter="middle",o.isMeasured=!1,e.rectangle=o,e._disposers.push(e._chart),e.applyTheme(),e}return y(e,t),Object.defineProperty(e.prototype,"series",{get:function(){return this._series||(this._series=new u.a,this._series.events.on("insert",this.handleSeriesAdded,this),this._series.events.on("remove",this.handleSeriesRemoved,this)),this._series},enumerable:!0,configurable:!0}),e.prototype.handleSeriesAdded=function(t){var e=t.newValue;if(this.chart.series.contains(e)){var i=e.clone();this._series.removeValue(e),this._series.push(i),e=i,this.chart.dataUsers.push(i)}e.chart=this.chart,e.parent=this.seriesContainer,e.interactionsEnabled=!1},e.prototype.handleSeriesRemoved=function(t){this.invalidate()},e.prototype.moveToPosition=function(t){var e=t.svgPoint,i=v.H(e,this.rectangle),o=this.chart.zoomLevel,n=Math.min(this.percentWidth,this.percentHeight)/100,s=(i.x+this.rectangle.pixelWidth/2)/n*o,a=(i.y+this.rectangle.pixelHeight/2)/n*o,r=this.chart.svgPointToGeo({x:s,y:a});this.chart.zoomToGeoPoint(r,this.chart.zoomLevel,!0)},Object.defineProperty(e.prototype,"chart",{get:function(){return this._chart.get()},set:function(t){this.chart!=t&&this._chart.set(t,new d.c([t.events.on("zoomlevelchanged",this.updateRectangle,this),t.events.on("mappositionchanged",this.updateRectangle,this),t.events.on("scaleratiochanged",this.updateMapSize,this)]))},enumerable:!0,configurable:!0}),e.prototype.updateRectangle=function(){var t=this.chart,e=t.zoomLevel,i=this.rectangle;i.width=this.pixelWidth/e,i.height=this.pixelHeight/e;var o=Math.min(this.percentWidth,this.percentHeight)/100,n=t.seriesContainer,s=Math.ceil((e*n.pixelWidth/2-n.pixelX)*o/e+i.pixelWidth/2),a=Math.ceil((e*n.pixelHeight/2-n.pixelY)*o/e+i.pixelHeight/2);i.x=s,i.y=a},e.prototype.updateMapSize=function(){this.chart&&(this.seriesContainer.scale=this.chart.scaleRatio*Math.min(this.percentWidth,this.percentHeight)/100,this.afterDraw())},e.prototype.afterDraw=function(){t.prototype.afterDraw.call(this),this.seriesContainer.moveTo({x:this.pixelWidth/2,y:this.pixelHeight/2}),this.rectangle.maskRectangle={x:-1,y:-1,width:Math.ceil(this.pixelWidth+2),height:Math.ceil(this.pixelHeight+2)}},e.prototype.processConfig=function(e){if(e&&b.c(e.series)&&b.d(e.series))for(var i=0,o=e.series.length;i<o;i++){var n=e.series[i];b.c(n)&&b.i(n)&&this.map.hasKey(n)&&(e.series[i]=this.map.getKey(n))}t.prototype.processConfig.call(this,e)},e}(c.a);m.a.registeredClasses.SmallMap=x;var w=i("BU6c"),_=i("ZsiW"),B=i("cyab"),z=i("WkuV"),C=i("7/BW"),O=this&&this.__extends||function(){var t=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var i in e)e.hasOwnProperty(i)&&(t[i]=e[i])};return function(e,i){function o(){this.constructor=e}t(e,i),e.prototype=null===i?Object.create(i):(o.prototype=i.prototype,new o)}}(),H=function(t){function e(){var e=t.call(this)||this;e._chart=new d.d,e.className="ZoomControl",e.align="right",e.valign="bottom",e.layout="vertical",e.padding(5,5,5,5);var i=new f.a,o=e.createChild(w.a);o.shouldClone=!1,o.label.text="+",o.width=Object(C.c)(100),o.padding(5,5,5,5),e.plusButton=o;var n=e.createChild(c.a);n.shouldClone=!1,n.width=Object(C.c)(100),n.background.fill=i.getFor("alternativeBackground"),n.background.fillOpacity=.05,n.background.events.on("hit",e.handleBackgroundClick,e),n.events.on("sizechanged",e.updateThumbSize,e),e.slider=n;var s=n.createChild(w.a);s.shouldClone=!1,s.padding(0,0,0,0),s.draggable=!0,s.events.on("drag",e.handleThumbDrag,e),e.thumb=s;var a=e.createChild(w.a);return a.shouldClone=!1,a.label.text="-",a.padding(5,5,5,5),e.minusButton=a,e.thumb.role="slider",e.thumb.readerLive="polite",e.thumb.readerTitle=e.language.translate("Use arrow keys to zoom in and out"),e.minusButton.readerTitle=e.language.translate("Press ENTER to zoom in"),e.plusButton.readerTitle=e.language.translate("Press ENTER to zoom out"),e.applyTheme(),e.events.on("propertychanged",function(t){"layout"==t.property&&e.fixLayout()}),e._disposers.push(e._chart),e.fixLayout(),e}return O(e,t),e.prototype.fixLayout=function(){"vertical"==this.layout?(this.width=40,this.height=void 0,this.minusButton.width=Object(C.c)(100),this.thumb.width=Object(C.c)(100),this.plusButton.width=Object(C.c)(100),this.slider.width=Object(C.c)(100),this.minusButton.marginTop=1,this.plusButton.marginBottom=2,this.slider.height=0,this.minusButton.toFront(),this.plusButton.toBack(),this.thumb.minX=0,this.thumb.maxX=0,this.thumb.minY=0):"horizontal"==this.layout&&(this.thumb.minX=0,this.thumb.minY=0,this.thumb.maxY=0,this.height=40,this.width=void 0,this.minusButton.height=Object(C.c)(100),this.minusButton.width=30,this.thumb.height=Object(C.c)(100),this.thumb.width=void 0,this.plusButton.height=Object(C.c)(100),this.plusButton.width=30,this.slider.height=Object(C.c)(100),this.slider.width=0,this.minusButton.marginLeft=2,this.plusButton.marginRight=2,this.minusButton.toBack(),this.plusButton.toFront())},e.prototype.handleBackgroundClick=function(t){var e=t.target,i=t.spritePoint.y,o=this.chart,n=Math.log(o.maxZoomLevel)/Math.LN2,s=Math.log(o.minZoomLevel)/Math.LN2,a=(e.pixelHeight-i)/e.pixelHeight*(s+(n-s)),r=Math.pow(2,a);o.zoomToGeoPoint(o.zoomGeoPoint,r)},Object.defineProperty(e.prototype,"chart",{get:function(){return this._chart.get()},set:function(t){var e=this;this._chart.set(t,new d.c([t.events.on("maxsizechanged",this.updateThumbSize,this),t.events.on("zoomlevelchanged",this.updateThumb,this),this.minusButton.events.on("hit",function(){t.zoomOut(t.zoomGeoPoint)},t),Object(z.a)().body.events.on("keyup",function(i){e.topParent.hasFocused&&(B.a.isKey(i.event,"enter")?e.minusButton.isFocused?t.zoomOut():e.plusButton.isFocused&&t.zoomIn():B.a.isKey(i.event,"plus")?t.zoomIn():B.a.isKey(i.event,"minus")&&t.zoomOut())},t),this.plusButton.events.on("hit",function(){t.zoomIn(t.zoomGeoPoint)},t)]))},enumerable:!0,configurable:!0}),e.prototype.updateThumbSize=function(){var t=this.chart;if(t){var e=this.slider,i=this.thumb;"vertical"==this.layout?(i.minHeight=Math.min(this.slider.pixelHeight,20),i.height=e.pixelHeight/(t.maxZoomLevel-t.minZoomLevel),i.maxY=e.pixelHeight-i.pixelHeight,i.pixelHeight<=1?i.visible=!1:i.visible=!0):(i.minWidth=Math.min(this.slider.pixelWidth,20),i.width=e.pixelWidth/(t.maxZoomLevel-t.minZoomLevel),i.maxX=e.pixelWidth-i.pixelWidth,i.pixelWidth<=1?i.visible=!1:i.visible=!0)}},e.prototype.updateThumb=function(){var t=this.slider,e=this.chart,i=this.thumb;if(!i.isDown){var o=Math.log(e.zoomLevel)/Math.LN2;"vertical"==this.layout?i.y=t.pixelHeight-(t.pixelHeight-i.pixelHeight)*(o+1)/this.stepCount:i.x=t.pixelWidth*o/this.stepCount}},e.prototype.handleThumbDrag=function(){var t,e=this.slider,i=this.chart,o=this.thumb;t="vertical"==this.layout?this.stepCount*(e.pixelHeight-o.pixelY-o.pixelHeight)/(e.pixelHeight-o.pixelHeight)-1:this.stepCount*o.pixelX/e.pixelWidth;var n=Math.pow(2,t);i.zoomToGeoPoint(void 0,n,!1,0)},Object.defineProperty(e.prototype,"stepCount",{get:function(){return Math.log(this.chart.maxZoomLevel)/Math.LN2-Math.log(this.chart.minZoomLevel)/Math.LN2},enumerable:!0,configurable:!0}),e.prototype.createBackground=function(){return new _.a},e}(c.a);m.a.registeredClasses.ZoomControl=H;e.default=[{relevant:function(t){return t.pixelWidth<=100||t.pixelHeight<=100},state:function(t,e){if(t instanceof n.a){var i=t.states.create(e);return i.properties.minLabelPosition=1,i.properties.maxLabelPosition=0,i}return null}},{relevant:function(t){return t.pixelWidth<=200},state:function(t,e){var i;return t instanceof a.a?((i=t.states.create(e)).properties.inside=!0,i):t instanceof r.a?((i=t.states.create(e)).properties.inside=!0,i):t instanceof x?((i=t.states.create(e)).properties.disabled=!0,i):t instanceof H?((i=t.states.create(e)).properties.layout="vertical",i):t instanceof h.a?((i=t.states.create(e)).properties.marginLeft=0,i.properties.marginRight=0,i):t instanceof l.a&&("left"==t.position||"right"==t.position)?((i=t.states.create(e)).properties.position="bottom",i):null}},{relevant:function(t){return t.pixelHeight<=200},state:function(t,e){var i;return t instanceof s.a?((i=t.states.create(e)).properties.inside=!0,i):t instanceof r.a?((i=t.states.create(e)).properties.inside=!0,i):t instanceof x?((i=t.states.create(e)).properties.disabled=!0,i):t instanceof H?((i=t.states.create(e)).properties.layout="horizontal",i):t instanceof h.a?((i=t.states.create(e)).properties.marginTop=0,i.properties.marginBottom=0,i):t instanceof l.a&&("bottom"==t.position||"top"==t.position)?((i=t.states.create(e)).properties.position="right",i):null}},{relevant:function(t){return t.pixelWidth<=200&&t.pixelHeight<=200},state:function(t,e){var i;return t instanceof l.a?((i=t.states.create(e)).properties.disabled=!0,i):t instanceof H?((i=t.states.create(e)).properties.disabled=!0,i):null}}]}});
+webpackJsonp([3],{
+
+/***/ "./node_modules/@amcharts/amcharts4/.internal/charts/map/SmallMap.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SmallMap; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_Container__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/Container.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_elements_Rectangle__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/elements/Rectangle.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_utils_List__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/List.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_utils_Disposer__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Disposer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_Registry__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/Registry.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_utils_Color__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Color.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_utils_InterfaceColorSet__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/InterfaceColorSet.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_utils_Utils__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Utils.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Type.js");
+/**
+ * A module for the mini-map control.
+ */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/**
+ * ============================================================================
+ * IMPORTS
+ * ============================================================================
+ * @hidden
+ */
+
+
+
+
+
+
+
+
+
+/**
+ * ============================================================================
+ * MAIN CLASS
+ * ============================================================================
+ * @hidden
+ */
+/**
+ * Creates a "bird's eye" view of the whole map.
+ *
+ * This control creates a mini-map with the whole of the map, highlighting
+ * the area which is in the current viewport of the map map.
+ *
+ * @see {@link ISmallMapEvents} for a list of available events
+ * @see {@link ISmallMapAdapters} for a list of available Adapters
+ * @important
+ */
+var SmallMap = /** @class */ (function (_super) {
+    __extends(SmallMap, _super);
+    /**
+     * Constructor
+     */
+    function SmallMap() {
+        var _this = 
+        // Init
+        _super.call(this) || this;
+        /**
+         * A target map.
+         *
+         * @type {MutableValueDisposer<MapChart>}
+         */
+        _this._chart = new __WEBPACK_IMPORTED_MODULE_3__core_utils_Disposer__["d" /* MutableValueDisposer */]();
+        _this.className = "SmallMap";
+        // Set defaults
+        _this.align = "left";
+        _this.valign = "bottom";
+        _this.percentHeight = 20;
+        _this.percentWidth = 20;
+        _this.margin(5, 5, 5, 5);
+        var interfaceColors = new __WEBPACK_IMPORTED_MODULE_6__core_utils_InterfaceColorSet__["a" /* InterfaceColorSet */]();
+        // Set background defailts
+        _this.background.fillOpacity = 0.9;
+        _this.background.fill = interfaceColors.getFor("background");
+        // Set up events
+        _this.events.on("hit", _this.moveToPosition, _this);
+        _this.events.on("maxsizechanged", _this.updateMapSize, _this);
+        // Create a container
+        _this.seriesContainer = _this.createChild(__WEBPACK_IMPORTED_MODULE_0__core_Container__["a" /* Container */]);
+        _this.seriesContainer.shouldClone = false;
+        // Create an outline rectangle
+        var rectangle = _this.createChild(__WEBPACK_IMPORTED_MODULE_1__core_elements_Rectangle__["a" /* Rectangle */]);
+        rectangle.shouldClone = false;
+        rectangle.stroke = interfaceColors.getFor("alternativeBackground");
+        rectangle.strokeWidth = 1;
+        rectangle.strokeOpacity = 0.5;
+        rectangle.fill = Object(__WEBPACK_IMPORTED_MODULE_5__core_utils_Color__["b" /* color */])(); //"none";
+        rectangle.verticalCenter = "middle";
+        rectangle.horizontalCenter = "middle";
+        rectangle.isMeasured = false;
+        _this.rectangle = rectangle;
+        _this._disposers.push(_this._chart);
+        // Apply theme
+        _this.applyTheme();
+        return _this;
+    }
+    Object.defineProperty(SmallMap.prototype, "series", {
+        /**
+         * A list of map series used to draw the mini-map.
+         *
+         * @readonly
+         * @return {List<MapSeries>} Series
+         */
+        get: function () {
+            if (!this._series) {
+                this._series = new __WEBPACK_IMPORTED_MODULE_2__core_utils_List__["a" /* List */]();
+                this._series.events.on("insert", this.handleSeriesAdded, this);
+                this._series.events.on("remove", this.handleSeriesRemoved, this);
+            }
+            return this._series;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Decorates a new series when they are pushed into a `series` list.
+     *
+     * @param {IListEvents<MapSeries>["insert"]} event Event
+     */
+    SmallMap.prototype.handleSeriesAdded = function (event) {
+        var series = event.newValue;
+        if (this.chart.series.contains(series)) {
+            var newSeries = series.clone();
+            this._series.removeValue(series);
+            this._series.push(newSeries);
+            series = newSeries;
+            this.chart.dataUsers.push(newSeries);
+        }
+        series.chart = this.chart;
+        series.parent = this.seriesContainer;
+        series.interactionsEnabled = false;
+    };
+    /**
+     * Cleans up after series are removed from Scrollbar.
+     *
+     * @param {IListEvents<XYSeries>["remove"]}  event  Event
+     */
+    SmallMap.prototype.handleSeriesRemoved = function (event) {
+        //let sourceSeries: MapSeries = event.oldValue;
+        this.invalidate();
+    };
+    /**
+     * Moves main map pan position after click on the small map.
+     *
+     * @ignore Exclude from docs
+     * @param {AMEvent<Sprite, ISpriteEvents>["hit"]}  event  Event
+     */
+    SmallMap.prototype.moveToPosition = function (event) {
+        var svgPoint = event.svgPoint;
+        var rectPoint = __WEBPACK_IMPORTED_MODULE_7__core_utils_Utils__["H" /* svgPointToSprite */](svgPoint, this.rectangle);
+        var zoomLevel = this.chart.zoomLevel;
+        var scale = Math.min(this.percentWidth, this.percentHeight) / 100;
+        var x = (rectPoint.x + this.rectangle.pixelWidth / 2) / scale * zoomLevel;
+        var y = (rectPoint.y + this.rectangle.pixelHeight / 2) / scale * zoomLevel;
+        var geoPoint = this.chart.svgPointToGeo({ x: x, y: y });
+        this.chart.zoomToGeoPoint(geoPoint, this.chart.zoomLevel, true);
+    };
+    Object.defineProperty(SmallMap.prototype, "chart", {
+        /**
+         * @return {MapChart} Chart/map
+         */
+        get: function () {
+            return this._chart.get();
+        },
+        /**
+         * A chart/map that this control is meant for.
+         *
+         * @param {MapChart}  chart  Chart/map
+         */
+        set: function (chart) {
+            if (this.chart != chart) {
+                this._chart.set(chart, new __WEBPACK_IMPORTED_MODULE_3__core_utils_Disposer__["c" /* MultiDisposer */]([
+                    chart.events.on("zoomlevelchanged", this.updateRectangle, this),
+                    chart.events.on("mappositionchanged", this.updateRectangle, this),
+                    chart.events.on("scaleratiochanged", this.updateMapSize, this)
+                ]));
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Updates the viewport recangle as per current map zoom/pan position.
+     *
+     * @ignore Exclude from docs
+     */
+    SmallMap.prototype.updateRectangle = function () {
+        var chart = this.chart;
+        var zoomLevel = chart.zoomLevel;
+        var rectangle = this.rectangle;
+        rectangle.width = this.pixelWidth / zoomLevel;
+        rectangle.height = this.pixelHeight / zoomLevel;
+        var scale = Math.min(this.percentWidth, this.percentHeight) / 100;
+        var seriesContainer = chart.seriesContainer;
+        var x = Math.ceil((zoomLevel * seriesContainer.pixelWidth / 2 - seriesContainer.pixelX) * scale / zoomLevel + rectangle.pixelWidth / 2);
+        var y = Math.ceil((zoomLevel * seriesContainer.pixelHeight / 2 - seriesContainer.pixelY) * scale / zoomLevel + rectangle.pixelHeight / 2);
+        rectangle.x = x;
+        rectangle.y = y;
+    };
+    /**
+     * Update map size so that internal elements can redraw themselves after
+     * the size of the small map changes.
+     *
+     * @ignore Exclude from docs
+     */
+    SmallMap.prototype.updateMapSize = function () {
+        if (this.chart) {
+            this.seriesContainer.scale = this.chart.scaleRatio * Math.min(this.percentWidth, this.percentHeight) / 100;
+            this.afterDraw();
+        }
+    };
+    /**
+     * Update elements after drawing the small map.
+     */
+    SmallMap.prototype.afterDraw = function () {
+        _super.prototype.afterDraw.call(this);
+        this.seriesContainer.moveTo({ x: this.pixelWidth / 2, y: this.pixelHeight / 2 });
+        this.rectangle.maskRectangle = { x: -1, y: -1, width: Math.ceil(this.pixelWidth + 2), height: Math.ceil(this.pixelHeight + 2) };
+    };
+    /**
+     * Processes JSON-based config before it is applied to the object.
+     *
+     * @ignore Exclude from docs
+     * @param {object}  config  Config
+     */
+    SmallMap.prototype.processConfig = function (config) {
+        if (config) {
+            // Set up series
+            if (__WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["c" /* hasValue */](config.series) && __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["d" /* isArray */](config.series)) {
+                for (var i = 0, len = config.series.length; i < len; i++) {
+                    var series = config.series[i];
+                    if (__WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["c" /* hasValue */](series) && __WEBPACK_IMPORTED_MODULE_8__core_utils_Type__["i" /* isString */](series) && this.map.hasKey(series)) {
+                        config.series[i] = this.map.getKey(series);
+                    }
+                }
+            }
+        }
+        _super.prototype.processConfig.call(this, config);
+    };
+    return SmallMap;
+}(__WEBPACK_IMPORTED_MODULE_0__core_Container__["a" /* Container */]));
+
+/**
+ * Register class in system, so that it can be instantiated using its name from
+ * anywhere.
+ *
+ * @ignore
+ */
+__WEBPACK_IMPORTED_MODULE_4__core_Registry__["a" /* registry */].registeredClasses["SmallMap"] = SmallMap;
+//# sourceMappingURL=SmallMap.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@amcharts/amcharts4/.internal/charts/map/ZoomControl.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoomControl; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_Container__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/Container.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_elements_Button__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/elements/Button.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_elements_RoundedRectangle__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/elements/RoundedRectangle.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_utils_Disposer__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Disposer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Keyboard.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_interaction_Interaction__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/interaction/Interaction.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/Percent.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__core_Registry__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/Registry.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__core_utils_InterfaceColorSet__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/core/utils/InterfaceColorSet.js");
+/**
+ * Zoom control module
+ */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+/**
+ * ============================================================================
+ * IMPORTS
+ * ============================================================================
+ * @hidden
+ */
+
+
+
+
+
+
+
+
+
+/**
+ * ============================================================================
+ * MAIN CLASS
+ * ============================================================================
+ * @hidden
+ */
+/**
+ * Creates a control for zooming the map.
+ *
+ * @see {@link IZoomControlEvents} for a list of available events
+ * @see {@link IZoomControlAdapters} for a list of available Adapters
+ * @important
+ */
+var ZoomControl = /** @class */ (function (_super) {
+    __extends(ZoomControl, _super);
+    /**
+     * Constructor
+     */
+    function ZoomControl() {
+        var _this = _super.call(this) || this;
+        /**
+         * A target map.
+         *
+         * @type {MutableValueDisposer<MapChart>}
+         */
+        _this._chart = new __WEBPACK_IMPORTED_MODULE_3__core_utils_Disposer__["d" /* MutableValueDisposer */]();
+        _this.className = "ZoomControl";
+        _this.align = "right";
+        _this.valign = "bottom";
+        _this.layout = "vertical";
+        _this.padding(5, 5, 5, 5);
+        var interfaceColors = new __WEBPACK_IMPORTED_MODULE_8__core_utils_InterfaceColorSet__["a" /* InterfaceColorSet */]();
+        var plusButton = _this.createChild(__WEBPACK_IMPORTED_MODULE_1__core_elements_Button__["a" /* Button */]);
+        plusButton.shouldClone = false;
+        plusButton.label.text = "+";
+        plusButton.width = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+        plusButton.padding(5, 5, 5, 5);
+        _this.plusButton = plusButton;
+        var slider = _this.createChild(__WEBPACK_IMPORTED_MODULE_0__core_Container__["a" /* Container */]);
+        slider.shouldClone = false;
+        slider.width = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+        slider.background.fill = interfaceColors.getFor("alternativeBackground");
+        slider.background.fillOpacity = 0.05;
+        slider.background.events.on("hit", _this.handleBackgroundClick, _this);
+        slider.events.on("sizechanged", _this.updateThumbSize, _this);
+        _this.slider = slider;
+        var thumb = slider.createChild(__WEBPACK_IMPORTED_MODULE_1__core_elements_Button__["a" /* Button */]);
+        thumb.shouldClone = false;
+        thumb.padding(0, 0, 0, 0);
+        thumb.draggable = true;
+        thumb.events.on("drag", _this.handleThumbDrag, _this);
+        _this.thumb = thumb;
+        var minusButton = _this.createChild(__WEBPACK_IMPORTED_MODULE_1__core_elements_Button__["a" /* Button */]);
+        minusButton.shouldClone = false;
+        minusButton.label.text = "-";
+        minusButton.padding(5, 5, 5, 5);
+        _this.minusButton = minusButton;
+        // Set roles
+        _this.thumb.role = "slider";
+        _this.thumb.readerLive = "polite";
+        // Set reader text
+        _this.thumb.readerTitle = _this.language.translate("Use arrow keys to zoom in and out");
+        _this.minusButton.readerTitle = _this.language.translate("Press ENTER to zoom in");
+        _this.plusButton.readerTitle = _this.language.translate("Press ENTER to zoom out");
+        _this.applyTheme();
+        _this.events.on("propertychanged", function (event) {
+            if (event.property == "layout") {
+                _this.fixLayout();
+            }
+        });
+        _this._disposers.push(_this._chart);
+        _this.fixLayout();
+        return _this;
+    }
+    ZoomControl.prototype.fixLayout = function () {
+        if (this.layout == "vertical") {
+            this.width = 40;
+            this.height = undefined;
+            this.minusButton.width = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.thumb.width = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.plusButton.width = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.slider.width = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.minusButton.marginTop = 1;
+            this.plusButton.marginBottom = 2;
+            this.slider.height = 0;
+            this.minusButton.toFront();
+            this.plusButton.toBack();
+            this.thumb.minX = 0;
+            this.thumb.maxX = 0;
+            this.thumb.minY = 0;
+        }
+        else if (this.layout == "horizontal") {
+            this.thumb.minX = 0;
+            this.thumb.minY = 0;
+            this.thumb.maxY = 0;
+            this.height = 40;
+            this.width = undefined;
+            this.minusButton.height = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.minusButton.width = 30;
+            this.thumb.height = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.thumb.width = undefined;
+            this.plusButton.height = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.plusButton.width = 30;
+            this.slider.height = Object(__WEBPACK_IMPORTED_MODULE_6__core_utils_Percent__["c" /* percent */])(100);
+            this.slider.width = 0;
+            this.minusButton.marginLeft = 2;
+            this.plusButton.marginRight = 2;
+            this.minusButton.toBack();
+            this.plusButton.toFront();
+        }
+    };
+    /**
+     * Handles zoom operation after clicking on the slider background.
+     *
+     * @ignore Exclude from docs
+     * @param {AMEvent<Sprite, ISpriteEvents>["hit"]}  event  Event
+     */
+    ZoomControl.prototype.handleBackgroundClick = function (event) {
+        var sprite = event.target;
+        var y = event.spritePoint.y;
+        var chart = this.chart;
+        var maxPower = Math.log(chart.maxZoomLevel) / Math.LN2;
+        var minPower = Math.log(chart.minZoomLevel) / Math.LN2;
+        var power = (sprite.pixelHeight - y) / sprite.pixelHeight * (minPower + (maxPower - minPower));
+        var zoomLevel = Math.pow(2, power);
+        chart.zoomToGeoPoint(chart.zoomGeoPoint, zoomLevel);
+    };
+    Object.defineProperty(ZoomControl.prototype, "chart", {
+        /**
+         * @return {MapChart} Map/chart
+         */
+        get: function () {
+            return this._chart.get();
+        },
+        /**
+         * A main chart/map that this zoom control is for.
+         *
+         * @param {MapChart}  chart  Map/chart
+         */
+        set: function (chart) {
+            var _this = this;
+            this._chart.set(chart, new __WEBPACK_IMPORTED_MODULE_3__core_utils_Disposer__["c" /* MultiDisposer */]([
+                chart.events.on("maxsizechanged", this.updateThumbSize, this),
+                chart.events.on("zoomlevelchanged", this.updateThumb, this),
+                this.minusButton.events.on("hit", function () { chart.zoomOut(chart.zoomGeoPoint); }, chart),
+                Object(__WEBPACK_IMPORTED_MODULE_5__core_interaction_Interaction__["a" /* getInteraction */])().body.events.on("keyup", function (ev) {
+                    if (_this.topParent.hasFocused) {
+                        if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["a" /* keyboard */].isKey(ev.event, "enter")) {
+                            if (_this.minusButton.isFocused) {
+                                chart.zoomOut();
+                            }
+                            else if (_this.plusButton.isFocused) {
+                                chart.zoomIn();
+                            }
+                        }
+                        else if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["a" /* keyboard */].isKey(ev.event, "plus")) {
+                            chart.zoomIn();
+                        }
+                        else if (__WEBPACK_IMPORTED_MODULE_4__core_utils_Keyboard__["a" /* keyboard */].isKey(ev.event, "minus")) {
+                            chart.zoomOut();
+                        }
+                    }
+                }, chart),
+                this.plusButton.events.on("hit", function () { chart.zoomIn(chart.zoomGeoPoint); }, chart)
+            ]));
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Updates the slider's thumb size based on the available zoom space.
+     *
+     * @ignore Exclude from docs
+     */
+    ZoomControl.prototype.updateThumbSize = function () {
+        var chart = this.chart;
+        if (chart) {
+            var slider = this.slider;
+            var thumb = this.thumb;
+            if (this.layout == "vertical") {
+                thumb.minHeight = Math.min(this.slider.pixelHeight, 20);
+                thumb.height = slider.pixelHeight / (chart.maxZoomLevel - chart.minZoomLevel);
+                thumb.maxY = slider.pixelHeight - thumb.pixelHeight;
+                if (thumb.pixelHeight <= 1) {
+                    thumb.visible = false;
+                }
+                else {
+                    thumb.visible = true;
+                }
+            }
+            else {
+                thumb.minWidth = Math.min(this.slider.pixelWidth, 20);
+                thumb.width = slider.pixelWidth / (chart.maxZoomLevel - chart.minZoomLevel);
+                thumb.maxX = slider.pixelWidth - thumb.pixelWidth;
+                if (thumb.pixelWidth <= 1) {
+                    thumb.visible = false;
+                }
+                else {
+                    thumb.visible = true;
+                }
+            }
+        }
+    };
+    /**
+     * Updates thumb according to current zoom position from map.
+     *
+     * @ignore Exclude from docs
+     */
+    ZoomControl.prototype.updateThumb = function () {
+        var slider = this.slider;
+        var chart = this.chart;
+        var thumb = this.thumb;
+        if (!thumb.isDown) {
+            var step = Math.log(chart.zoomLevel) / Math.LN2;
+            if (this.layout == "vertical") {
+                thumb.y = slider.pixelHeight - (slider.pixelHeight - thumb.pixelHeight) * (step + 1) / this.stepCount;
+            }
+            else {
+                thumb.x = slider.pixelWidth * step / this.stepCount;
+            }
+        }
+    };
+    /**
+     * Zooms the actual map when slider position changes.
+     *
+     * @ignore Exclude from docs
+     */
+    ZoomControl.prototype.handleThumbDrag = function () {
+        var slider = this.slider;
+        var chart = this.chart;
+        var thumb = this.thumb;
+        var step;
+        if (this.layout == "vertical") {
+            step = this.stepCount * (slider.pixelHeight - thumb.pixelY - thumb.pixelHeight) / (slider.pixelHeight - thumb.pixelHeight) - 1;
+        }
+        else {
+            step = this.stepCount * thumb.pixelX / slider.pixelWidth;
+        }
+        var zoomLevel = Math.pow(2, step);
+        chart.zoomToGeoPoint(undefined, zoomLevel, false, 0);
+    };
+    Object.defineProperty(ZoomControl.prototype, "stepCount", {
+        /**
+         * Returns the step countfor the slider grid according to map's min and max
+         * zoom level settings.
+         *
+         * @ignore Exclude from docs
+         * @return {number} Step count
+         */
+        get: function () {
+            return Math.log(this.chart.maxZoomLevel) / Math.LN2 - Math.log(this.chart.minZoomLevel) / Math.LN2;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Creates a background element for slider control.
+     *
+     * @ignore Exclude from docs
+     * @return {this} Background
+     */
+    ZoomControl.prototype.createBackground = function () {
+        return new __WEBPACK_IMPORTED_MODULE_2__core_elements_RoundedRectangle__["a" /* RoundedRectangle */]();
+    };
+    return ZoomControl;
+}(__WEBPACK_IMPORTED_MODULE_0__core_Container__["a" /* Container */]));
+
+/**
+ * Register class in system, so that it can be instantiated using its name from
+ * anywhere.
+ *
+ * @ignore
+ */
+__WEBPACK_IMPORTED_MODULE_7__core_Registry__["a" /* registry */].registeredClasses["ZoomControl"] = ZoomControl;
+//# sourceMappingURL=ZoomControl.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@amcharts/amcharts4/.internal/core/responsive/ResponsiveDefaults.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_axes_AxisRenderer__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/axes/AxisRenderer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__charts_axes_AxisRendererX__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/axes/AxisRendererX.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__charts_axes_AxisRendererY__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/axes/AxisRendererY.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__charts_axes_AxisRendererCircular__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/axes/AxisRendererCircular.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__charts_Chart__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/Chart.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__charts_Legend__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/Legend.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__charts_map_SmallMap__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/map/SmallMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__charts_map_ZoomControl__ = __webpack_require__("./node_modules/@amcharts/amcharts4/.internal/charts/map/ZoomControl.js");
+/**
+ * Defines default Responsive rules
+ * @hidden
+ */
+
+
+
+
+
+
+
+
+/**
+ * ============================================================================
+ * RULES
+ * ============================================================================
+ * @hidden
+ */
+/**
+ * Default rules.
+ *
+ * @ignore Exclude from docs
+ * @todo Do not create states for objects that do not have any overrides
+ */
+/* harmony default export */ __webpack_exports__["default"] = ([
+    /**
+     * --------------------------------------------------------------------------
+     * Microcharts and sparklines
+     * W<=100 || H<=100
+     * @todo
+     */
+    {
+        relevant: function (container) {
+            if ((container.pixelWidth <= 100) || (container.pixelHeight <= 100)) {
+                return true;
+            }
+            return false;
+        },
+        state: function (object, stateId) {
+            // Put vertical axis labels inside
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_0__charts_axes_AxisRenderer__["a" /* AxisRenderer */]) {
+                var state = object.states.create(stateId);
+                state.properties.minLabelPosition = 1;
+                state.properties.maxLabelPosition = 0;
+                return state;
+            }
+            return null;
+        }
+    },
+    /**
+     * --------------------------------------------------------------------------
+     * Narrow
+     * W<=200
+     */
+    {
+        relevant: function (container) {
+            if ((container.pixelWidth <= 200)) {
+                return true;
+            }
+            return false;
+        },
+        state: function (object, stateId) {
+            // Put vertical axis labels inside
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_2__charts_axes_AxisRendererY__["a" /* AxisRendererY */]) {
+                var state = object.states.create(stateId);
+                state.properties.inside = true;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_3__charts_axes_AxisRendererCircular__["a" /* AxisRendererCircular */]) {
+                var state = object.states.create(stateId);
+                state.properties.inside = true;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_6__charts_map_SmallMap__["a" /* SmallMap */]) {
+                var state = object.states.create(stateId);
+                state.properties.disabled = true;
+                return state;
+            }
+            /*if (object instanceof Container && object.parent instanceof ZoomControl && !(object instanceof Button)) {
+                let state = object.states.create(stateId);
+                state.properties.height = 0;
+                return state;
+            }*/
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_7__charts_map_ZoomControl__["a" /* ZoomControl */]) {
+                var state = object.states.create(stateId);
+                state.properties.layout = "vertical";
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_4__charts_Chart__["a" /* Chart */]) {
+                var state = object.states.create(stateId);
+                state.properties.marginLeft = 0;
+                state.properties.marginRight = 0;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_5__charts_Legend__["a" /* Legend */] && (object.position == "left" || object.position == "right")) {
+                var state = object.states.create(stateId);
+                state.properties.position = "bottom";
+                return state;
+            }
+            return null;
+        }
+    },
+    /**
+     * --------------------------------------------------------------------------
+     * Short
+     * H<=200
+     */
+    {
+        relevant: function (container) {
+            if ((container.pixelHeight <= 200)) {
+                return true;
+            }
+            return false;
+        },
+        state: function (object, stateId) {
+            // Put vertical axis labels inside
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_1__charts_axes_AxisRendererX__["a" /* AxisRendererX */]) {
+                var state = object.states.create(stateId);
+                state.properties.inside = true;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_3__charts_axes_AxisRendererCircular__["a" /* AxisRendererCircular */]) {
+                var state = object.states.create(stateId);
+                state.properties.inside = true;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_6__charts_map_SmallMap__["a" /* SmallMap */]) {
+                var state = object.states.create(stateId);
+                state.properties.disabled = true;
+                return state;
+            }
+            /*if (object instanceof Container && object.parent instanceof ZoomControl && !(object instanceof Button)) {
+                let state = object.states.create(stateId);
+                state.properties.width = 100;
+                return state;
+            }*/
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_7__charts_map_ZoomControl__["a" /* ZoomControl */]) {
+                var state = object.states.create(stateId);
+                state.properties.layout = "horizontal";
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_4__charts_Chart__["a" /* Chart */]) {
+                var state = object.states.create(stateId);
+                state.properties.marginTop = 0;
+                state.properties.marginBottom = 0;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_5__charts_Legend__["a" /* Legend */] && (object.position == "bottom" || object.position == "top")) {
+                var state = object.states.create(stateId);
+                state.properties.position = "right";
+                return state;
+            }
+            return null;
+        }
+    },
+    /**
+     * --------------------------------------------------------------------------
+     * Super-small
+     * W<=200 && H<=200
+     */
+    {
+        relevant: function (container) {
+            if ((container.pixelWidth <= 200) && (container.pixelHeight <= 200)) {
+                return true;
+            }
+            return false;
+        },
+        state: function (object, stateId) {
+            // Hide legend
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_5__charts_Legend__["a" /* Legend */]) {
+                var state = object.states.create(stateId);
+                state.properties.disabled = true;
+                return state;
+            }
+            if (object instanceof __WEBPACK_IMPORTED_MODULE_7__charts_map_ZoomControl__["a" /* ZoomControl */]) {
+                var state = object.states.create(stateId);
+                state.properties.disabled = true;
+                return state;
+            }
+            return null;
+        }
+    }
+]);
+//# sourceMappingURL=ResponsiveDefaults.js.map
+
+/***/ })
+
+});
