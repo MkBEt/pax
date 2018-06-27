@@ -57,14 +57,7 @@ return [
         'mongodb' => [
             'driver'   => 'mongodb',
             'dsn'=>'mongodb+srv://milan:4$cmila@n13@cluster0-0s5w2.azure.mongodb.net/test?retryWrites=true',
-            'host'     => env('DB_HOST', 'localhost'),
-            'port'     => env('DB_PORT', 27017),
             'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
-            'options'  => [
-                'database' => 'admin' // sets the authentication database required by mongo 3
-            ]
         ],
 
         'pgsql' => [
