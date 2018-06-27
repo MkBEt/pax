@@ -102,54 +102,59 @@
         	},
         	transfer(){
         		let self = this;
-        		this.disable_buy_btn=1;
-        		this.$validator.validateAll().then(result => {
-				   // result is true or false depending on the validation result.
+        		if (this.disable_buy_btn == 0 ) {	
+        		// console.log('transfer function');
+	        		this.disable_buy_btn=1;
+	        		this.$validator.validateAll().then(result => {
+					   // result is true or false depending on the validation result.
 
-				  if (result) {
-					steem.api.getAccounts([self.account_name], function(err, response) {
-						if (err) {
-							self.$toastr.e("Please try again later."); 
-							self.invalid_account = true;
-							self.disable_buy_btn = 0;
-							return false;
-						}
-						if (response.length>0) {
-							let res = response[0];
-							if (self.type=='steem') {
-								console.log(parseFloat((res.balance).replace("STEEM",'')));
-								if (parseFloat((res.balance).replace("STEEM",'')) < parseFloat(self.amount)) {
-									self.invalid_amount = true;
-									self.disable_buy_btn = 0;
-									return false;
-								}else{
-									self.invalid_amount = false;
-									self.transfer_link_generator();
-								}
+					  if (result) {
+						steem.api.getAccounts([self.account_name], function(err, response) {
+							if (err) {
+								self.$toastr.e("Please try again later."); 
+								self.invalid_account = true;
+								self.disable_buy_btn = 0;
+								return false;
 							}
-							if (self.type=='sbd') {
-								if (parseFloat((res.sbd_balance).replace("SBD",'')) < parseFloat(self.amount)) {
-									self.invalid_amount = true;
-									self.disable_buy_btn = 0;
-									return false;
-								}else{
-									self.invalid_amount = false;
-									self.transfer_link_generator("SBD");
-
+							if (response.length>0) {
+								let res = response[0];
+								if (self.type=='steem') {
+									console.log(parseFloat((res.balance).replace("STEEM",'')));
+									if (parseFloat((res.balance).replace("STEEM",'')) < parseFloat(self.amount)) {
+										self.invalid_amount = true;
+										self.disable_buy_btn = 0;
+										return false;
+									}else{
+										self.invalid_amount = false;
+										self.transfer_link_generator();
+									}
 								}
-							}
-						}else{
-							self.$toastr.e("Account name doesn't exists."); 
-							self.invalid_account = true;
-							self.disable_buy_btn = 0;
-							return false;
+								if (self.type=='sbd') {
+									if (parseFloat((res.sbd_balance).replace("SBD",'')) < parseFloat(self.amount)) {
+										self.invalid_amount = true;
+										self.disable_buy_btn = 0;
+										return false;
+									}else{
+										self.invalid_amount = false;
+										self.transfer_link_generator("SBD");
 
-						}
+									}
+								}
+							}else{
+								self.$toastr.e("Account name doesn't exists."); 
+								self.invalid_account = true;
+								self.disable_buy_btn = 0;
+								return false;
+
+							}
+						});
+					  } else {
+					    self.disable_buy_btn = 0;
+					  }
 					});
-				  } else {
-				    self.disable_buy_btn = 0;
-				  }
-				});
+        		}else{
+        			return false;
+        		}
         	}
         }
     }
