@@ -12,3 +12,4 @@ public/build/*
 README.md
 readme.md
 /node_modules/*
+/config/database.php
