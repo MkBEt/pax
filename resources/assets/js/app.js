@@ -124,6 +124,7 @@ Vue.component('v-input', {
   }
 });
 Vue.component('registration-form', require('./components/RegistrationForm.vue'));
+Vue.component('transaction-history', require('./components/TransactionHistory.vue'));
 Vue.component('transfer-form', require('./components/BuyComponent.vue'));
 Vue.component("median-history", require("./components/Graphs/MedianHistory.vue"));
 

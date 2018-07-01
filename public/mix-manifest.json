@@ -1,8 +1,8 @@
 {
-    "/pdfmake.js": "/pdfmake.js?id=c956c166b3ecbfd68cbf",
-    "/xlsx.js": "/xlsx.js?id=ac3ef6dd1dc3a3c1a55b",
-    "/fabric.js": "/fabric.js?id=28182c317a082ca07ebb",
-    "/responsivedefaults.js": "/responsivedefaults.js?id=a9af164dcce5f4f45d78",
-    "/js/app.js": "/js/app.js?id=d3880497f91089c45fcb",
-    "/css/app.css": "/css/app.css?id=74a69186c9880eecafbf"
+    "/pdfmake.js": "/pdfmake.js",
+    "/xlsx.js": "/xlsx.js",
+    "/fabric.js": "/fabric.js",
+    "/responsivedefaults.js": "/responsivedefaults.js",
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css"
 }

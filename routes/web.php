@@ -28,6 +28,9 @@ Route::middleware(['auth'])->prefix('api')->group(function(){
 
 Route::namespace('Frontend')->middleware(['auth'])->group(function(){
 	Route::get('dashboard','UserController@userDashboard');
+	Route::get('wallet','UserController@wallet')->name('wallet');
+	Route::get('redeems','UserController@fetchRedeems');
+	Route::post('redeem','UserController@redeem');
 	Route::get('/buy_sell_steem_sbd',function(){
 		return view('frontend.transaction.buy_sell_steem_sbd');
 	})->name('buy_sell');

@@ -13544,6 +13544,15 @@ fieldset:disabled a.btn {
   border-color: #007bff;
 }
 
+button[disabled]:hover {
+  background: red;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background: lime;
+}
+
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
@@ -14202,6 +14211,14 @@ fieldset:disabled a.btn {
   font-size: 0.7875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
+}
+
+.btn-xs,
+.btn-group-xs > .btn {
+  padding: 0.13rem 0.25rem;
+  font-size: 0.7875rem;
+  line-height: 1.5;
+  border-radius: 0.1rem;
 }
 
 .btn-block {

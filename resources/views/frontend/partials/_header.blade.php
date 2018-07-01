@@ -31,8 +31,8 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="{{ route('buy_sell')}}">Buy Steem/SBD</a></li>
-          <li><a href="#wallet">WALLET</a></li>
+          <li class="menu-active"><a href="{{ route('buy_sell')}}">Deposit Steem/SBD</a></li>
+          <li><a href="{{route('wallet')}}">WALLET</a></li>
           <li class="menu-has-children"><a href="">Help</a>
             <ul>
               <li><a href="#">F.A.Q</a></li>

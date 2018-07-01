@@ -37,13 +37,13 @@
 				    <div>
 				    	<label class="dark">
 				            <input type="radio" name="type" id="type1" value="steem" v-model="type">
-				        Buy Steem
+				        Deposit Steem
 				        </label class="dark">
 				    </div>
 				    <div>
 				    	<label>
 				            <input type="radio" name="type" id="type1" value="sbd" v-model="type">
-				        Buy SBD
+				        Deposit SBD
 				        </label>
 				    </div>
 				  </div>
@@ -77,12 +77,19 @@
     	},
         mounted() {
         	$('#amount').select();
+        	steem.api.getAccountHistory('milan.amatya13', -1, 50, (err, result) => {
+			const transfers = result.filter(tx => tx[1].op[0] === 'transfer');
+			transfers.forEach((tx) => {
+			const transfer = tx[1].op[1];
+			console.log(transfer,tx);
+			});
+			});
         },
         data(){
         	return {
         		disable_buy_btn:0,
         		type: 'steem',
-        		amount: '100',
+        		amount: '0.001',
         		account_name:'',
         		invalid_amount:false,
         		invalid_account:false,
@@ -92,12 +99,12 @@
         	focusOnEnter(id){
         		$(id).focus();
         	},
-        	transfer_link_generator(type="STEEM",to='milan.amatya13',amount=this.amount,memo=this.memo){
+        	transfer_link_generator(type="STEEM",to='amar17',amount=this.amount,memo=this.memo){
         		var link = api.sign('transfer', {
 				  to: to,
 				  amount: parseFloat(amount).toFixed(3)+' '+type,
 				  memo: memo,
-				}, 'http://fiasteem.com/transfer-complete');
+				}, 'http://67.205.167.221/wallet');
 				window.open(link,"_self");
         	},
         	transfer(){
