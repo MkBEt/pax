@@ -31,19 +31,19 @@
 	<section class="info-section">
 		<div class="jumbotron">
 			<div class="container text-center">
-				<h1 class="dark">BUY STEEM/SBD</h1> 
+				<h1 class="dark">ADD STEEM/SBD</h1> 
 				<div class="row">
 				  <div class="col-md-3 mb-2">
 				    <div>
 				    	<label class="dark">
 				            <input type="radio" name="type" id="type1" value="steem" v-model="type">
-				        Deposit Steem
+				        ADD Steem
 				        </label class="dark">
 				    </div>
 				    <div>
 				    	<label>
 				            <input type="radio" name="type" id="type1" value="sbd" v-model="type">
-				        Deposit SBD
+				        ADD SBD
 				        </label>
 				    </div>
 				  </div>

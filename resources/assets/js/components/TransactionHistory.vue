@@ -1,8 +1,8 @@
 <template>
 	<table class="table table-bordered  table-sm ">
 		<thead class="thead-dark">
-			<th>Transactio Id</th>
-			<th>From Steem A/c</th>
+			<th>Transaction Id</th>
+			<th>From Steemit A/c</th>
 			<th>Amount</th>
 			<th>Transaction Info</th>
 			<th>Actions</th>
@@ -14,6 +14,9 @@
 				<td>{{trans.amount}}</td>
 				<td>{{trans.timestamp}}</td>
 				<td><button class="btn btn-primary btn-xs" @click="redeem(trans)" :disabled="trans.disable==1">Redeem</button></td>
+			</tr>
+			<tr v-if="user_transaction.length == 0">
+				<td colspan="5" class="text-center">No transactions.</td>
 			</tr>
 		</tbody>
 	</table>

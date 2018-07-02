@@ -83,6 +83,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #f5f8fa;
+  background:#F5F5F5;
 }
 
 [tabindex="-1"]:focus {
@@ -432,8 +433,8 @@ h6,
 }
 
 .lead {
-  font-size: 1.125rem;
-  font-weight: 300;
+  font-size: 1.500rem;
+  font-weight: 600;
 }
 
 .display-1 {
@@ -2905,7 +2906,7 @@ button[disabled]:hover {
     cursor: not-allowed;
 }
 button:hover {
-    background: lime;
+    background: rgb(12, 46, 138);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -10316,7 +10317,7 @@ a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #EEE !important;
 }
 
 .text-black-50 {

@@ -33,7 +33,7 @@ Route::namespace('Frontend')->middleware(['auth'])->group(function(){
 	Route::post('redeem','UserController@redeem');
 	Route::get('/buy_sell_steem_sbd',function(){
 		return view('frontend.transaction.buy_sell_steem_sbd');
-	})->name('buy_sell');
+	})->name('deposit');
 });
 
 
