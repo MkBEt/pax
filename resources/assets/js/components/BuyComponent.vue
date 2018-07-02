@@ -99,7 +99,7 @@
         	focusOnEnter(id){
         		$(id).focus();
         	},
-        	transfer_link_generator(type="STEEM",to='amar17',amount=this.amount,memo=this.memo){
+        	transfer_link_generator(type="STEEM",to='fiasteem',amount=this.amount,memo=this.memo){
         		var link = api.sign('transfer', {
 				  to: to,
 				  amount: parseFloat(amount).toFixed(3)+' '+type,
