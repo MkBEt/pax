@@ -1,7 +1,7 @@
   <!--==========================
     Top Bar
   ============================-->
- {{--  <section id="topbar" class="d-none d-lg-block">
+{{--   <section id="topbar" class="d-none d-lg-block">
     <div class="container clearfix">
       <div class="contact-info float-left">
         <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
@@ -16,6 +16,31 @@
       </div>
     </div>
   </section> --}}
+
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        @if(!Auth::user())
+          <i class="fas fa-user"></i> <a href="{{route('register')}}">REGISTER</a>
+          <i class="fas fa-sign-in-alt"></i><a href="{{route('login')}}">LOGIN</a>
+        @else
+          <i class="far fa-user"></i> <a href="#">{{Auth::user()->first_name}}</a>
+          <i class="fas fa-sign-out-alt"></i><a href="{{route('logout')}}"  onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">LOGOUT</a></li>
+              <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+        @endif
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fab fa-discord"></i></a>
+        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+   {{--      <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fab fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a> --}}
+      </div>
+    </div>
+  </section>
 
   <!--==========================
     Header
@@ -39,7 +64,7 @@
               <li><a href="#">SUPPORT FORUM</a></li>
             </ul>
           </li>
-          @if(!Auth::user())
+      {{--     @if(!Auth::user())
           <li><a href="{{route('login')}}">LOGIN</a></li>
           <li><a href="{{route('register')}}">CREATE ACCOUNT</a></li>
           @else
@@ -51,7 +76,7 @@
                   @csrf
               </form>
           </ul>
-          @endif
+          @endif --}}
         {{--   <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li> --}}
         </ul>

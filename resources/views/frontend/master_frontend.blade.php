@@ -21,7 +21,7 @@
   <!-- Libraries CSS Files -->
   <link href="{{mix('css/app.css')}}" rel="stylesheet">
   {{-- <link href="{{url('css/style.css')}}" rel="stylesheet"> --}}
-  <link href="{{url('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{url('lib/font-awesome/css/all.css')}}" rel="stylesheet">
   <link href="{{url('lib/animate/animate.min.css')}}" rel="stylesheet">
   <link href="{{url('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
   <link href="{{url('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
