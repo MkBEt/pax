@@ -1271,5 +1271,51 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 
+.icon{
+  width: 24px;
+  height: 24px;
+  fill: #555;
+}
+
+.icon.is-check{
+  fill: #FE4365;
+}
+
+.icon.is-outlined{
+  stroke:  #FE4365;
+  stroke-width: 2px;
+  fill: transparent;
+}
+
+.icon.is-x2{
+  width: 64px;
+  height: 64px;
+}
+
+.icon.is-hoverable:hover{
+  fill: #06D6A9;
+  cursor: pointer;
+}
+
+.icon.is-activeable:active{
+  transform: scale(1.25);
+  cursor: pointer;
+}
+
+.icon.is-pink--onhover:hover{
+  fill: pink;
+}
+
+
+.icon.is-transit{
+   -webkit-transition: all .35s ease-out;
+  -moz-transition: all .35s ease-out;
+  -ms-transition: all .35s ease-out;
+  -o-transition: all .35s ease-out;
+  transition: all .35s ease-out;
+}
+
+
+
 
 
