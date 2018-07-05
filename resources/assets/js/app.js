@@ -24,6 +24,7 @@ window.am4charts = require('@amcharts/amcharts4/chartse');
 window.am4themes_animated = require('@amcharts/amcharts4/themes/animated');*/
 
 import VeeValidate from 'vee-validate';
+import VueQrcode from '@xkeshi/vue-qrcode';
 // import Toastr
 import Toastr from 'vue-toastr';
 Vue.use(Toastr);
@@ -55,6 +56,7 @@ window.steem = require('steem')
 
 /*import Buefy from 'buefy'
 Vue.use(Buefy);*/
+Vue.component(VueQrcode.name, VueQrcode);
 Vue.component('v-input', {
 	$_veeValidate: {
   	value () {

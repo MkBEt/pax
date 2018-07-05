@@ -11,7 +11,7 @@
 						<div class="summary-overview">
 							<h2 class="dark ">{{$info->username}}</h2>
 							<h3 class="dark ">{{$info->blc_steem}} Steem / {{$info->blc_sbd}} SBD</h3>
-							<span class="dark" id="memo">{{$info->memo}}</span>&nbsp;<a class="btn btn-warning btn-sm btn-collapsible" onclick="copyToClipboard()"><i class="fa fa-copy"></i> <span>Copy</span></a>
+							<span class="dark" id="memo" data-clipboard-text="{{Auth::user()->memo}}">{{$info->memo}}</span>&nbsp;<a class="btn btn-warning btn-sm btn-collapsible" onclick="copyToClipboard()"><i class="fa fa-copy"></i> <span>Copy</span></a>
 							
 						</div>
 					</div>
@@ -49,18 +49,4 @@
 			</div>
 		</div>
 	</section>
-@endsection
-
-@section('javascript')
-<script>
-	function copyToClipboard() {
-	    var copyText = document.getElementById("memo");
-	    var textArea = document.createElement("textarea");
-	    textArea.value = copyText.textContent;
-	    document.body.appendChild(textArea);
-	    textArea.select();
-	    document.execCommand("Copy");
-	    textArea.remove();
-	}
-</script>
 @endsection

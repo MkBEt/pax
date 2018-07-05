@@ -122,6 +122,16 @@
 		  accessToken: 'access_token',
 		  scope: ['vote', 'comment']
 		});
+
+		function copyToClipboard() {
+		    var copyText = $('#memo');
+		    var textArea = document.createElement("textarea");
+		    textArea.value = copyText.data('clipboardText');
+		    document.body.appendChild(textArea);
+		    textArea.select();
+		    document.execCommand("Copy");
+		    textArea.remove();
+		}
 /*
 
 		var link = api.sign('transfer', {

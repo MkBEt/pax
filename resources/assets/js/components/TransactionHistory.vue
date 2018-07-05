@@ -1,30 +1,35 @@
 <template>
-	<table class="table table-bordered  table-sm ">
-		<thead class="thead-dark">
-			<th>Transaction Id</th>
-			<th>From Steemit A/c</th>
-			<th>Amount</th>
-			<th>Transaction Info</th>
-			<th>Actions</th>
-		</thead>
-		<tbody>
-			<tr v-for="(trans,index) in user_transaction">
-				<td>{{trans.trx_id}}</td>
-				<td>{{trans.from}}</td>
-				<td>{{trans.amount}}</td>
-				<td>{{trans.timestamp}}</td>
-				<td><button class="btn btn-primary btn-xs" @click="redeem(trans)" :disabled="trans.disable==1">Redeem</button></td>
-			</tr>
-			<tr v-if="user_transaction.length == 0">
-				<td colspan="5" class="text-center">No transactions.</td>
-			</tr>
-		</tbody>
-	</table>
+	<section class="transaction-table table-responsive">
+		<table class="table table-bordered  table-sm">
+			<thead class="thead-dark">
+				<th>Transaction Id</th>
+				<th>From Steemit A/c</th>
+				<th>Amount</th>
+				<th>Transaction Info</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<tr v-for="(trans,index) in user_transaction">
+					<td>{{trans.trx_id}}</td>
+					<td>{{trans.from}}</td>
+					<td>{{trans.amount}}</td>
+					<td>{{trans.timestamp}}</td>
+					<td><button class="btn btn-primary btn-xs" @click="redeem(trans)" :disabled="trans.disable==1">Redeem</button></td>
+				</tr>
+				<tr v-if="user_transaction.length == 0">
+					<td colspan="5" class="text-center">No transactions.</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
 </template>
 <script >
 	export default {
 
       data(){
+ /*     	steem.broadcast.transfer("5JpSa8s8ZYiJArmmGLpgtXLTeAsrtdSvuNEhs7SPoQPYcZ6fmBh", "milan.amatya13", "fiasteem", "0.001 STEEM", "test", function(err, result) {
+  console.log(err, result);
+});*/
 
       	return {
       				user_transaction:[],

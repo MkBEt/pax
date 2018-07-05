@@ -18,11 +18,41 @@
     </div>
   </div>
 </section>
-<section class="transaction-history">
-  <div class="container">
-    <transaction-history memo="{{Auth::user()->memo}}"></transaction-history>
-  </div>
-</section>
+<div class="container">
+  
+  <section class="address-info">
+    <div class="row address-container mb-4">
+      <div class="col-lg-1 offset-lg-3 col-md-2  offset-md-2 col-sm-2 offset-sm-2 d-none d-md-block">
+        <span id="fiasteem_memo_qr_code">
+          <i class="fas fa-expand"></i>
+          <qrcode  value="{{Auth::user()->memo}}" :options="{ size: 100 }"></qrcode>
+        </span>
+      </div>
+      <div class="col-sm-8">
+        <span class="help-block help-bigger nobottommargin">Your Steem deposit memo is below 
+          <i class="icon-line2-question" data-toggle="popover" data-placement="top" data-content="Deposit bitcoins to address below from bitcoin ATM or any other bitcoin wallet. This is your permanent bitcoin address and never changes." data-container="body" data-trigger="hover" data-original-title="" title="">
+            
+          </i>
+        </span>
+        <span id="permanent-crypto-address" data-crypto-address="{{Auth::user()->memo}}">{{Auth::user()->memo}}</span>
+        <div class="btn-group">
+          <button type="button" class="btn-app-teal btn-app-teal-xs " id="memo" onclick="copyToClipboard()" data-clipboard-text="{{Auth::user()->memo}}">Copy address</button>
+          <ul class="dropdown-menu">
+            <li><a href="#" id="quick-new-crypto-address">Get new address</a></li>
+          </ul>
+        </div>
+        <div class="btn-group d-block d-sm-none float-right">
+          <a href="#" class="qr-icon-link" data-toggle="modal" data-target="#requestedBitcoinAddressModal">
+            <qrcode value="{{Auth::user()->memo}}" :options="{ size: 20 }"></qrcode> Enlarge QR
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="transaction-history">
+      <transaction-history memo="{{Auth::user()->memo}}"></transaction-history>
+  </section>
+</div>
 
 @endsection
 

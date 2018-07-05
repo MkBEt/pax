@@ -20,9 +20,11 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
+    "@xkeshi/vue-qrcode": "^1.0.0",
     "amcharts3": "^3.21.13",
     "steem": "^0.7.1",
     "vee-validate": "^2.1.0-beta.1",
+    "vue": "^2.5.16",
     "vue-toastr": "^2.0.14"
   }
 }
