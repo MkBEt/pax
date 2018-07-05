@@ -27,7 +27,7 @@
 	export default {
 
       data(){
- /*     	steem.broadcast.transfer("5JpSa8s8ZYiJArmmGLpgtXLTeAsrtdSvuNEhs7SPoQPYcZ6fmBh", "milan.amatya13", "fiasteem", "0.001 STEEM", "test", function(err, result) {
+ /*     	steem.broadcast.transfer("", "milan.amatya13", "fiasteem", "0.001 STEEM", "test", function(err, result) {
   console.log(err, result);
 });*/
 
