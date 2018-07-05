@@ -11,7 +11,7 @@
       <p class="dark mb-md-0">
         You can transfer Fiasteem balance to other Fiasteem user or your Steemit balance to your Fiasteem friends.
       </p>
-      <button style="width: 100%;" class="btn-app-teal button button-rounded button-xlarge" >SEND STEEM/SBD</button>
+      <button style="width: 70%;" class="btn-app-teal button button-rounded button-xlarge" >SEND STEEM/SBD</button>
       {{-- <p class="lead balance mb-md-0 mt-md-0" style="color: rgb(12, 46, 138)">0 STEEM
         <strong class="text-muted native-amount dark">≈ 0 USD</strong>
       </p> --}}
